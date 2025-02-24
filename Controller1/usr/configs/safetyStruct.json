@@ -1,0 +1,296 @@
+{
+    "formatVersion": 1,
+    "structVersion": 1,
+    "scpConfig": {
+        "bool": {
+            "offset": 0
+        },
+        "timer": {
+            "offset": 30
+        },
+        "SLSj": {
+            "offset": 0
+        },
+        "SLSc": {
+            "offset": 20
+        },
+        "SZMc": {
+            "offset": 70
+        },
+        "SLO": {
+            "offset": 5
+        },
+        "SEL": {
+            "offset": 0
+        },
+        "tool": {
+            "offset": 270        
+		}
+    },
+    "global": {
+        "WMS": 4,
+        "mcpMode": 1,
+        "testMode": 2,
+        "mcpRestart": 3,
+        "restartControl": 40,
+        "referencingTimeout": 45,
+        "jointLimits": [
+            0,
+            1,
+            3,
+            2
+        ],
+        "jointLimitsManu": 37,
+        "valveControlA": 36,
+        "valveControlB": 36,
+        "manu": {
+            "brakeTest": 34,
+            "safeVel": 41,
+            "safePos": 43,
+            "stopTime": 0,
+            "velLimit": "@sls_manu"
+        },
+        "auto": {
+            "brakeTest": 35,
+            "safeVel": 42,
+            "safePos": 44,
+            "stopTime": 0,
+            "velLimit": "@sls_auto"
+        }
+    },
+    "USI": {
+        "A": {
+            "eStop": 5,
+            "auto": 6,
+            "manu": 7,
+            "restart": 8,
+            "ss1": 9,
+            "ss2": 10,
+            "sls": {
+                "enabled": 11,
+                "velLimit": "@sls_usiA"
+            },
+            "zone": {
+                "enabled": null,
+                "zone": null
+            },
+            "delay": 1,
+            "trigger": "Rsi9IO\\IsignalA"
+        },
+        "B": {
+            "eStop": null,
+            "auto": 12,
+            "manu": 13,
+            "restart": 14,
+            "ss1": 15,
+            "ss2": 16,
+            "sls": {
+                "enabled": 17,
+                "velLimit": "@sls_usiB"
+            },
+            "zone": {
+                "enabled": 18,
+                "zone": "@zone_usiB"
+            },
+            "delay": 2,
+            "trigger": "Rsi9IO\\IsignalB"
+        },
+        "C": {
+            "eStop": null,
+            "auto": 19,
+            "manu": 20,
+            "restart": 21,
+            "ss1": 22,
+            "ss2": 23,
+            "sls": {
+                "enabled": 24,
+                "velLimit": "@sls_usiC"
+            },
+            "zone": {
+                "enabled": 25,
+                "zone": "@zone_usiC"
+            },
+            "delay": 3,
+            "trigger": "Rsi9IO\\IsignalC"
+        },
+        "D": {
+            "eStop": null,
+            "auto": 26,
+            "manu": 27,
+            "restart": 28,
+            "ss1": 29,
+            "ss2": 30,
+            "sls": {
+                "enabled": 31,
+                "velLimit": "@sls_usiD"
+            },
+            "zone": {
+                "enabled": null,
+                "zone": null
+            },
+            "delay": 4,
+            "trigger": "Rsi9IO\\IsignalD"
+        }
+    },
+    "USO": {
+        "A": {
+            "VAL3": 46,
+            "ss2": 47,
+            "eStop": 48,
+            "eStopWithAck": 49,
+            "SOS": null,
+            "mode": null,
+            "SLSD": null,
+            "ack": null,
+            "power": null
+        },
+        "B": {
+            "VAL3": 50,
+            "ss2": null,
+            "eStop": null,
+            "eStopWithAck": null,
+            "SOS": 51,
+            "mode": 52,
+            "SLSD": 53,
+            "ack": null,
+            "power": null
+        },
+        "C": {
+            "VAL3": 54,
+            "ss2": 57,
+            "eStop": null,
+            "eStopWithAck": null,
+            "SOS": null,
+            "mode": null,
+            "SLSD": null,
+            "ack": 55,
+            "power": 56
+        }
+    },
+    "permanentZone": {
+        "1": {
+            "SZMc": 0,
+            "forbidden": null,
+            "velLimit": "@sls_zone1",
+            "SLO": null,
+            "jog": 38
+        },
+        "2": {
+            "SZMc": 1,
+            "forbidden": null,
+            "velLimit": "@sls_zone2",
+            "SLO": null,
+            "jog": 39
+        }
+    },
+    "activableZone": {
+        "zone_usiB": {
+            "SZMc": 2,
+            "forbidden": null,
+            "velLimit": "@sls_usiB",
+            "SLO": null,
+            "jog": null
+        },
+        "zone_usiC": {
+            "SZMc": 3,
+            "forbidden": null,
+            "velLimit": "@sls_usiC",
+            "SLO": null,
+            "jog": null
+        }
+    },
+    "velLimit": {
+        "sls_auto": {
+            "SLSj": [
+                4,
+                5,
+                7,
+                6
+            ],
+            "SLSc": 1
+        },
+        "sls_manu": {
+            "SLSj": [
+                0,
+                1,
+                3,
+                2
+            ],
+            "SLSc": 0
+        },
+        "sls_usiA": {
+            "SLSj": [
+                16,
+                17,
+                19,
+                18
+            ],
+            "SLSc": 4
+        },
+        "sls_usiB": {
+            "SLSj": [
+                20,
+                21,
+                23,
+                22
+            ],
+            "SLSc": 5
+        },
+        "sls_usiC": {
+            "SLSj": [
+                24,
+                25,
+                27,
+                26
+            ],
+            "SLSc": 6
+        },
+        "sls_usiD": {
+            "SLSj": [
+                28,
+                29,
+                31,
+                30
+            ],
+            "SLSc": 7
+        },
+        "sls_zone1": {
+            "SLSj": [
+                8,
+                9,
+                11,
+                10
+            ],
+            "SLSc": 2
+        },
+        "sls_zone2": {
+            "SLSj": [
+                12,
+                13,
+                15,
+                14
+            ],
+            "SLSc": 3
+        }
+    },
+    "tool": {
+        "0": {
+            "tool": 0,
+            "trigger": ""
+        }
+    },
+    "refJntPos": {
+        "ref1": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "ref2": [
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+}

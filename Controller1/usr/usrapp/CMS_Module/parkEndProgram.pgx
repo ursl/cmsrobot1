@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="parkEndProgram">
+    <Locals>
+      <Local name="jPos" type="jointRs" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  if bEndProgram==true
+    call print("end program, put robot into safe state")
+  
+    statusDoAirex       = colorError
+    statusCleanupChuck1 = colorError
+    statusCleanupChuck2 = colorError
+    statusDoModules     = colorError
+
+    jPos = herej()
+    call print("end program: stopMove at here.z = "  + toString("6.3", jPos.j3))
+    stopMove()
+    delay(2)
+   
+   // jPos = herej()
+    call print("end program: resetMotion at here.z = "  + toString("6.3", jPos.j3))
+    delay(2) 
+    resetMotion()
+  
+    
+    // -- move up to safe z position from wherever you are 
+    jPos.j3 = 70
+    call print("end program: move up")
+    movej(jPos, tTool, mSlow)
+    waitEndMove()
+  
+    // -- move over end of foil, deposit anything connected  
+    call print("end program: move to appro(parkEndPoint, trZsafe)")
+    movej(appro(parkEndPoint, trZsafe), tTool, mNomSpeed)
+    waitEndMove()
+    call print("end program: move to appro(parkEndPoint, trZero)")
+    movej(appro(parkEndPoint, trZero), tTool, mSlow)
+    waitEndMove()
+    call print("end program: drop tool")
+    switchMagnet = false
+    switchVac0   = false
+    switchVac1   = false
+    delay(1)
+    
+    // -- move up
+    call print("end program: move up")
+    movej(appro(parkEndPoint, trZsafe), tTool, mNomSpeed)
+    waitEndMove()
+  
+    // -- move to normal rest position
+    call print("end program: move to normal rest position")
+    movej(jInitialPosition, tTool, mFast)
+    waitEndMove()
+    resetMotion()
+
+    //taskKill("doAirexTask")
+    //taskKill("doModulesTask")
+    //taskKill("doGlueGlass")
+    
+    bEndProgram = false
+    disablePower()
+    call print("program ended, now what?")
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

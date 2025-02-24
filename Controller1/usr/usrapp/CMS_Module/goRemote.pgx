@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="goRemote">
+    <Locals>
+      <Local name="strGoRemote" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  call setSpeed()
+  resetMotion()
+ 
+  strGoRemote = "goRemote "
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.x)
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.y)
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.z)
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.rx)
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.ry)
+  strGoRemote = strGoRemote + toString("6.3", pGoRemoteTarget[0].trsf.rz)
+  call print(strGoRemote)
+  
+  movel(pGoRemoteTarget, tTool, mNomSpeed)
+  waitEndMove()
+end]]></Code>
+  </Program>
+</Programs>

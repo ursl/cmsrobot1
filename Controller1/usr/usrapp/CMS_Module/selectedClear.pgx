@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="selectedClear">
+    <Code><![CDATA[begin
+  if bSelectItem
+    bSelectedItems[0] = true
+    bSelectedItems[1] = true
+    bSelectedItems[2] = true
+    bSelectedItems[3] = true
+    bSelectedItems[4] = true
+    bSelectedItems[5] = true
+  endIf
+  bSelectItem  = false
+  bSkipGlue[0] = false
+end]]></Code>
+  </Program>
+</Programs>

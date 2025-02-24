@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="selectedCheck">
+    <Code><![CDATA[begin
+  if bSelectedItems[0]==true and bSelectedItems[1]==true and bSelectedItems[2]==true and bSelectedItems[3]==true and bSelectedItems[4]==true and bSelectedItems[5]==true
+    bSelectItem = false
+  else
+    bSelectItem = true
+  endIf
+
+end]]></Code>
+  </Program>
+</Programs>

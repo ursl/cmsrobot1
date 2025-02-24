@@ -1,0 +1,1214 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "clkPark1",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValvePage",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkBack",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve0",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve1",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve2",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve3",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve4",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve5",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve6",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve7",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve8",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve9",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve10",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve11",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve12",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve13",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve14",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve15",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve16",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkValve17",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkAllOff",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 108,
+          "isCollapsed": false
+        },
+        {
+          "start": 32,
+          "end": 99,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkDoModules",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkAllOn",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 104,
+          "isCollapsed": false
+        },
+        {
+          "start": 30,
+          "end": 95,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkAirexOn",
+      "nodes": [
+        {
+          "start": 9,
+          "end": 126,
+          "isCollapsed": false
+        },
+        {
+          "start": 30,
+          "end": 117,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkAirexOff",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 125,
+          "isCollapsed": false
+        },
+        {
+          "start": 29,
+          "end": 116,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "print",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkDoAirex",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "stop",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 54,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "park1",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkPark2",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "selectedCheck",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 236,
+          "isCollapsed": false
+        },
+        {
+          "start": 201,
+          "end": 228,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkGlueGlass",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "setValveStatus",
+      "nodes": [
+        {
+          "start": 11,
+          "end": 122,
+          "isCollapsed": false
+        },
+        {
+          "start": 86,
+          "end": 114,
+          "isCollapsed": false
+        },
+        {
+          "start": 128,
+          "end": 239,
+          "isCollapsed": false
+        },
+        {
+          "start": 203,
+          "end": 231,
+          "isCollapsed": false
+        },
+        {
+          "start": 250,
+          "end": 361,
+          "isCollapsed": false
+        },
+        {
+          "start": 325,
+          "end": 353,
+          "isCollapsed": false
+        },
+        {
+          "start": 367,
+          "end": 478,
+          "isCollapsed": false
+        },
+        {
+          "start": 442,
+          "end": 470,
+          "isCollapsed": false
+        },
+        {
+          "start": 484,
+          "end": 595,
+          "isCollapsed": false
+        },
+        {
+          "start": 559,
+          "end": 587,
+          "isCollapsed": false
+        },
+        {
+          "start": 601,
+          "end": 712,
+          "isCollapsed": false
+        },
+        {
+          "start": 676,
+          "end": 704,
+          "isCollapsed": false
+        },
+        {
+          "start": 718,
+          "end": 829,
+          "isCollapsed": false
+        },
+        {
+          "start": 793,
+          "end": 821,
+          "isCollapsed": false
+        },
+        {
+          "start": 835,
+          "end": 946,
+          "isCollapsed": false
+        },
+        {
+          "start": 910,
+          "end": 938,
+          "isCollapsed": false
+        },
+        {
+          "start": 952,
+          "end": 1063,
+          "isCollapsed": false
+        },
+        {
+          "start": 1027,
+          "end": 1055,
+          "isCollapsed": false
+        },
+        {
+          "start": 1069,
+          "end": 1180,
+          "isCollapsed": false
+        },
+        {
+          "start": 1144,
+          "end": 1172,
+          "isCollapsed": false
+        },
+        {
+          "start": 1186,
+          "end": 1300,
+          "isCollapsed": false
+        },
+        {
+          "start": 1263,
+          "end": 1292,
+          "isCollapsed": false
+        },
+        {
+          "start": 1306,
+          "end": 1420,
+          "isCollapsed": false
+        },
+        {
+          "start": 1383,
+          "end": 1412,
+          "isCollapsed": false
+        },
+        {
+          "start": 1426,
+          "end": 1540,
+          "isCollapsed": false
+        },
+        {
+          "start": 1503,
+          "end": 1532,
+          "isCollapsed": false
+        },
+        {
+          "start": 1546,
+          "end": 1660,
+          "isCollapsed": false
+        },
+        {
+          "start": 1623,
+          "end": 1652,
+          "isCollapsed": false
+        },
+        {
+          "start": 1666,
+          "end": 1780,
+          "isCollapsed": false
+        },
+        {
+          "start": 1743,
+          "end": 1772,
+          "isCollapsed": false
+        },
+        {
+          "start": 1786,
+          "end": 1900,
+          "isCollapsed": false
+        },
+        {
+          "start": 1863,
+          "end": 1892,
+          "isCollapsed": false
+        },
+        {
+          "start": 1906,
+          "end": 2020,
+          "isCollapsed": false
+        },
+        {
+          "start": 1983,
+          "end": 2012,
+          "isCollapsed": false
+        },
+        {
+          "start": 2026,
+          "end": 2142,
+          "isCollapsed": false
+        },
+        {
+          "start": 2103,
+          "end": 2132,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "toggleValve",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 3064,
+          "isCollapsed": false
+        },
+        {
+          "start": 104,
+          "end": 1551,
+          "isCollapsed": false
+        },
+        {
+          "start": 124,
+          "end": 195,
+          "isCollapsed": false
+        },
+        {
+          "start": 202,
+          "end": 273,
+          "isCollapsed": false
+        },
+        {
+          "start": 280,
+          "end": 351,
+          "isCollapsed": false
+        },
+        {
+          "start": 358,
+          "end": 429,
+          "isCollapsed": false
+        },
+        {
+          "start": 436,
+          "end": 507,
+          "isCollapsed": false
+        },
+        {
+          "start": 514,
+          "end": 585,
+          "isCollapsed": false
+        },
+        {
+          "start": 592,
+          "end": 663,
+          "isCollapsed": false
+        },
+        {
+          "start": 670,
+          "end": 741,
+          "isCollapsed": false
+        },
+        {
+          "start": 748,
+          "end": 819,
+          "isCollapsed": false
+        },
+        {
+          "start": 826,
+          "end": 897,
+          "isCollapsed": false
+        },
+        {
+          "start": 904,
+          "end": 977,
+          "isCollapsed": false
+        },
+        {
+          "start": 984,
+          "end": 1057,
+          "isCollapsed": false
+        },
+        {
+          "start": 1064,
+          "end": 1137,
+          "isCollapsed": false
+        },
+        {
+          "start": 1144,
+          "end": 1217,
+          "isCollapsed": false
+        },
+        {
+          "start": 1224,
+          "end": 1297,
+          "isCollapsed": false
+        },
+        {
+          "start": 1304,
+          "end": 1377,
+          "isCollapsed": false
+        },
+        {
+          "start": 1384,
+          "end": 1457,
+          "isCollapsed": false
+        },
+        {
+          "start": 1464,
+          "end": 1537,
+          "isCollapsed": false
+        },
+        {
+          "start": 1554,
+          "end": 3056,
+          "isCollapsed": false
+        },
+        {
+          "start": 1627,
+          "end": 3056,
+          "isCollapsed": false
+        },
+        {
+          "start": 1647,
+          "end": 1717,
+          "isCollapsed": false
+        },
+        {
+          "start": 1724,
+          "end": 1794,
+          "isCollapsed": false
+        },
+        {
+          "start": 1801,
+          "end": 1871,
+          "isCollapsed": false
+        },
+        {
+          "start": 1878,
+          "end": 1948,
+          "isCollapsed": false
+        },
+        {
+          "start": 1955,
+          "end": 2025,
+          "isCollapsed": false
+        },
+        {
+          "start": 2032,
+          "end": 2102,
+          "isCollapsed": false
+        },
+        {
+          "start": 2109,
+          "end": 2179,
+          "isCollapsed": false
+        },
+        {
+          "start": 2186,
+          "end": 2256,
+          "isCollapsed": false
+        },
+        {
+          "start": 2263,
+          "end": 2333,
+          "isCollapsed": false
+        },
+        {
+          "start": 2340,
+          "end": 2410,
+          "isCollapsed": false
+        },
+        {
+          "start": 2417,
+          "end": 2489,
+          "isCollapsed": false
+        },
+        {
+          "start": 2496,
+          "end": 2568,
+          "isCollapsed": false
+        },
+        {
+          "start": 2575,
+          "end": 2647,
+          "isCollapsed": false
+        },
+        {
+          "start": 2654,
+          "end": 2726,
+          "isCollapsed": false
+        },
+        {
+          "start": 2733,
+          "end": 2805,
+          "isCollapsed": false
+        },
+        {
+          "start": 2812,
+          "end": 2884,
+          "isCollapsed": false
+        },
+        {
+          "start": 2891,
+          "end": 2963,
+          "isCollapsed": false
+        },
+        {
+          "start": 2970,
+          "end": 3042,
+          "isCollapsed": false
+        },
+        {
+          "start": 3110,
+          "end": 3693,
+          "isCollapsed": false
+        },
+        {
+          "start": 3325,
+          "end": 3644,
+          "isCollapsed": false
+        },
+        {
+          "start": 3593,
+          "end": 3634,
+          "isCollapsed": false
+        },
+        {
+          "start": 3647,
+          "end": 3685,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "selectedClear",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 204,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "socketServer",
+      "nodes": [
+        {
+          "start": 101,
+          "end": 2556,
+          "isCollapsed": false
+        },
+        {
+          "start": 145,
+          "end": 2545,
+          "isCollapsed": false
+        },
+        {
+          "start": 163,
+          "end": 591,
+          "isCollapsed": false
+        },
+        {
+          "start": 741,
+          "end": 1862,
+          "isCollapsed": false
+        },
+        {
+          "start": 857,
+          "end": 1817,
+          "isCollapsed": false
+        },
+        {
+          "start": 907,
+          "end": 1140,
+          "isCollapsed": false
+        },
+        {
+          "start": 1439,
+          "end": 1803,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "goRemote",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "clkEndProgram",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "setSpeed",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 1038,
+          "isCollapsed": false
+        },
+        {
+          "start": 210,
+          "end": 413,
+          "isCollapsed": false
+        },
+        {
+          "start": 417,
+          "end": 620,
+          "isCollapsed": false
+        },
+        {
+          "start": 623,
+          "end": 826,
+          "isCollapsed": false
+        },
+        {
+          "start": 829,
+          "end": 1032,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "parkEndProgram",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 1664,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkCleanupChuck1",
+      "nodes": [
+        {
+          "start": 202,
+          "end": 1315,
+          "isCollapsed": false
+        },
+        {
+          "start": 227,
+          "end": 1306,
+          "isCollapsed": false
+        },
+        {
+          "start": 506,
+          "end": 614,
+          "isCollapsed": false
+        },
+        {
+          "start": 985,
+          "end": 1093,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "moveStampUp",
+      "nodes": [
+        {
+          "start": 65,
+          "end": 120,
+          "isCollapsed": false
+        },
+        {
+          "start": 126,
+          "end": 306,
+          "isCollapsed": false
+        },
+        {
+          "start": 235,
+          "end": 298,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "doAirex",
+      "nodes": [
+        {
+          "start": 34,
+          "end": 6450,
+          "isCollapsed": false
+        },
+        {
+          "start": 80,
+          "end": 1353,
+          "isCollapsed": false
+        },
+        {
+          "start": 259,
+          "end": 1187,
+          "isCollapsed": false
+        },
+        {
+          "start": 374,
+          "end": 733,
+          "isCollapsed": false
+        },
+        {
+          "start": 505,
+          "end": 718,
+          "isCollapsed": false
+        },
+        {
+          "start": 740,
+          "end": 1175,
+          "isCollapsed": false
+        },
+        {
+          "start": 876,
+          "end": 1175,
+          "isCollapsed": false
+        },
+        {
+          "start": 909,
+          "end": 1160,
+          "isCollapsed": false
+        },
+        {
+          "start": 1223,
+          "end": 1342,
+          "isCollapsed": false
+        },
+        {
+          "start": 1425,
+          "end": 6439,
+          "isCollapsed": false
+        },
+        {
+          "start": 1504,
+          "end": 3937,
+          "isCollapsed": false
+        },
+        {
+          "start": 2644,
+          "end": 3633,
+          "isCollapsed": false
+        },
+        {
+          "start": 2675,
+          "end": 3618,
+          "isCollapsed": false
+        },
+        {
+          "start": 2768,
+          "end": 3602,
+          "isCollapsed": false
+        },
+        {
+          "start": 3951,
+          "end": 4091,
+          "isCollapsed": false
+        },
+        {
+          "start": 4021,
+          "end": 4079,
+          "isCollapsed": false
+        },
+        {
+          "start": 4175,
+          "end": 6153,
+          "isCollapsed": false
+        },
+        {
+          "start": 4204,
+          "end": 6140,
+          "isCollapsed": false
+        },
+        {
+          "start": 4293,
+          "end": 6126,
+          "isCollapsed": false
+        },
+        {
+          "start": 5111,
+          "end": 5224,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "doModules",
+      "nodes": [
+        {
+          "start": 34,
+          "end": 6942,
+          "isCollapsed": false
+        },
+        {
+          "start": 49,
+          "end": 1234,
+          "isCollapsed": false
+        },
+        {
+          "start": 266,
+          "end": 1067,
+          "isCollapsed": false
+        },
+        {
+          "start": 381,
+          "end": 630,
+          "isCollapsed": false
+        },
+        {
+          "start": 409,
+          "end": 615,
+          "isCollapsed": false
+        },
+        {
+          "start": 637,
+          "end": 1055,
+          "isCollapsed": false
+        },
+        {
+          "start": 773,
+          "end": 1055,
+          "isCollapsed": false
+        },
+        {
+          "start": 801,
+          "end": 1040,
+          "isCollapsed": false
+        },
+        {
+          "start": 1103,
+          "end": 1224,
+          "isCollapsed": false
+        },
+        {
+          "start": 1306,
+          "end": 6931,
+          "isCollapsed": false
+        },
+        {
+          "start": 1424,
+          "end": 4651,
+          "isCollapsed": false
+        },
+        {
+          "start": 3254,
+          "end": 4337,
+          "isCollapsed": false
+        },
+        {
+          "start": 3280,
+          "end": 4322,
+          "isCollapsed": false
+        },
+        {
+          "start": 3368,
+          "end": 4306,
+          "isCollapsed": false
+        },
+        {
+          "start": 4665,
+          "end": 4795,
+          "isCollapsed": false
+        },
+        {
+          "start": 4730,
+          "end": 4783,
+          "isCollapsed": false
+        },
+        {
+          "start": 4879,
+          "end": 6659,
+          "isCollapsed": false
+        },
+        {
+          "start": 4903,
+          "end": 6646,
+          "isCollapsed": false
+        },
+        {
+          "start": 4987,
+          "end": 6631,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "glueGlass",
+      "nodes": [
+        {
+          "start": 8,
+          "end": 6772,
+          "isCollapsed": false
+        },
+        {
+          "start": 36,
+          "end": 1426,
+          "isCollapsed": false
+        },
+        {
+          "start": 189,
+          "end": 1313,
+          "isCollapsed": false
+        },
+        {
+          "start": 304,
+          "end": 698,
+          "isCollapsed": false
+        },
+        {
+          "start": 332,
+          "end": 499,
+          "isCollapsed": false
+        },
+        {
+          "start": 510,
+          "end": 683,
+          "isCollapsed": false
+        },
+        {
+          "start": 705,
+          "end": 1301,
+          "isCollapsed": false
+        },
+        {
+          "start": 841,
+          "end": 1301,
+          "isCollapsed": false
+        },
+        {
+          "start": 869,
+          "end": 1069,
+          "isCollapsed": false
+        },
+        {
+          "start": 1080,
+          "end": 1286,
+          "isCollapsed": false
+        },
+        {
+          "start": 1320,
+          "end": 1409,
+          "isCollapsed": false
+        },
+        {
+          "start": 1498,
+          "end": 6761,
+          "isCollapsed": false
+        },
+        {
+          "start": 1553,
+          "end": 4157,
+          "isCollapsed": false
+        },
+        {
+          "start": 2756,
+          "end": 3851,
+          "isCollapsed": false
+        },
+        {
+          "start": 2782,
+          "end": 3836,
+          "isCollapsed": false
+        },
+        {
+          "start": 2870,
+          "end": 3820,
+          "isCollapsed": false
+        },
+        {
+          "start": 4171,
+          "end": 4301,
+          "isCollapsed": false
+        },
+        {
+          "start": 4236,
+          "end": 4289,
+          "isCollapsed": false
+        },
+        {
+          "start": 4391,
+          "end": 6504,
+          "isCollapsed": false
+        },
+        {
+          "start": 4415,
+          "end": 6491,
+          "isCollapsed": false
+        },
+        {
+          "start": 4499,
+          "end": 6477,
+          "isCollapsed": false
+        },
+        {
+          "start": 5392,
+          "end": 5491,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "moveDown",
+      "nodes": [
+        {
+          "start": 54,
+          "end": 318,
+          "isCollapsed": false
+        },
+        {
+          "start": 150,
+          "end": 239,
+          "isCollapsed": false
+        },
+        {
+          "start": 242,
+          "end": 310,
+          "isCollapsed": false
+        },
+        {
+          "start": 429,
+          "end": 468,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "clkCleanupChuck2",
+      "nodes": [
+        {
+          "start": 205,
+          "end": 1343,
+          "isCollapsed": false
+        },
+        {
+          "start": 225,
+          "end": 1334,
+          "isCollapsed": false
+        },
+        {
+          "start": 492,
+          "end": 590,
+          "isCollapsed": false
+        },
+        {
+          "start": 1033,
+          "end": 1131,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 194,
+          "end": 243,
+          "isCollapsed": false
+        },
+        {
+          "start": 246,
+          "end": 331,
+          "isCollapsed": false
+        },
+        {
+          "start": 270,
+          "end": 323,
+          "isCollapsed": false
+        },
+        {
+          "start": 573,
+          "end": 737,
+          "isCollapsed": false
+        },
+        {
+          "start": 598,
+          "end": 728,
+          "isCollapsed": false
+        },
+        {
+          "start": 673,
+          "end": 718,
+          "isCollapsed": false
+        },
+        {
+          "start": 809,
+          "end": 871,
+          "isCollapsed": false
+        },
+        {
+          "start": 2548,
+          "end": 2686,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

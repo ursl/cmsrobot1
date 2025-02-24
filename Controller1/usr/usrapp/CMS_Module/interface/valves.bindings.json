@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "bindings": [
+    {
+      "id": "btnValve1",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[6]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnValve0",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnValve2",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[12]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnValve3",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[1]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnValve4",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[7]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnValve5",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[13]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI0",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[2]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI1",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[8]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI2",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[14]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI3",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[4]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI4",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[10]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnHDI5",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[16]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btn1",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[3]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnSensor1",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[9]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnSensor2",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[15]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnSensor3",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[5]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnSensor4",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[11]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnSensor5",
+      "attribute": "style.backgroundColor",
+      "data": "colorValveButton[17]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    }
+  ],
+  "callbacks": [
+    {
+      "id": "btnValve1",
+      "event": "click",
+      "data": "clkValve6",
+      "priority": 10
+    },
+    {
+      "id": "btn3",
+      "event": "click",
+      "data": "clkBack",
+      "priority": 10
+    },
+    {
+      "id": "btnValve0",
+      "event": "click",
+      "data": "clkValve0",
+      "priority": 10
+    },
+    {
+      "id": "btnValve2",
+      "event": "click",
+      "data": "clkValve12",
+      "priority": 10
+    },
+    {
+      "id": "btnValve3",
+      "event": "click",
+      "data": "clkValve1",
+      "priority": 10
+    },
+    {
+      "id": "btnValve4",
+      "event": "click",
+      "data": "clkValve7",
+      "priority": 10
+    },
+    {
+      "id": "btnValve5",
+      "event": "click",
+      "data": "clkValve13",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI0",
+      "event": "click",
+      "data": "clkValve2",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI1",
+      "event": "click",
+      "data": "clkValve8",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI2",
+      "event": "click",
+      "data": "clkValve14",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI3",
+      "event": "click",
+      "data": "clkValve4",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI4",
+      "event": "click",
+      "data": "clkValve10",
+      "priority": 10
+    },
+    {
+      "id": "btnHDI5",
+      "event": "click",
+      "data": "clkValve16",
+      "priority": 10
+    },
+    {
+      "id": "btn1",
+      "event": "click",
+      "data": "clkValve3",
+      "priority": 10
+    },
+    {
+      "id": "btnSensor1",
+      "event": "click",
+      "data": "clkValve9",
+      "priority": 10
+    },
+    {
+      "id": "btnSensor2",
+      "event": "click",
+      "data": "clkValve15",
+      "priority": 10
+    },
+    {
+      "id": "btnSensor3",
+      "event": "click",
+      "data": "clkValve5",
+      "priority": 10
+    },
+    {
+      "id": "btnSensor4",
+      "event": "click",
+      "data": "clkValve11",
+      "priority": 10
+    },
+    {
+      "id": "btnSensor5",
+      "event": "click",
+      "data": "clkValve17",
+      "priority": 10
+    },
+    {
+      "id": "btnAllOff",
+      "event": "click",
+      "data": "clkAllOff",
+      "priority": 10
+    },
+    {
+      "id": "btnAllOn",
+      "event": "click",
+      "data": "clkAllOn",
+      "priority": 10
+    },
+    {
+      "id": "btn2",
+      "event": "click",
+      "data": "clkAirexOn",
+      "priority": 10
+    },
+    {
+      "id": "btn4",
+      "event": "click",
+      "data": "clkAirexOff",
+      "priority": 10
+    }
+  ],
+  "events": []
+}

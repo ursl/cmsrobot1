@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="socketServer">
+    <Locals>
+      <Local name="i" type="num" xsi:type="array" size="1" />
+      <Local name="l_bError" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_nReceiveByte" type="num" xsi:type="array" size="1" />
+      <Local name="numSendMsg" type="num" xsi:type="array" size="255" />
+      <Local name="nVal" type="num" xsi:type="array" size="6" />
+      <Local name="parseString" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  clearBuffer(sioSockets_server)
+  strTCPIP = "TCP/IP sockets server is ready"
+  delay(0)
+  
+  while true
+    
+    sReceiveMsg=""
+    
+    if bSockets
+      do
+        l_nResult = sioGet(sioSockets_server, l_nReceiveByte)
+        sReceiveMsg = sReceiveMsg + chr(l_nReceiveByte) 
+    
+        // Note: 10 = LF
+        //       13 = CR // this is set as "End of string"
+        // Linux  - Lines end with only a <LF> character
+        // Macintosh (Mac OSX) - Lines end with only a <LF> character
+        // NOTE: tcpip.swift sends a 13?!?!
+      until l_nResult!=1 or l_nReceiveByte==13
+    
+      //call print("receive ->" + sReceiveMsg + "<-")
+      strTCPIP = sReceiveMsg
+      delay(0.5)  
+      
+      parseString = strTCPIP
+      if find(parseString, "goRemote") == 0  
+        parseString = delete(parseString, len("goRemote "), 0)     
+        if len(parseString) > 2
+          i = 0
+          do
+            parseString = toNum(parseString, nVal[i], l_bError)
+            // call print(toString("4.2", i) + "  " + toString("6.2", nVal[i]))
+            i = i + 1
+          until(parseString=="") or (l_bError != true) or i == 5
+          
+          pGoRemoteTarget[0].trsf.x = nVal[0]
+          pGoRemoteTarget[0].trsf.y = nVal[1]
+          pGoRemoteTarget[0].trsf.z = nVal[2]
+          pGoRemoteTarget[0].trsf.rx = nVal[3]
+          pGoRemoteTarget[0].trsf.ry = nVal[4]
+          pGoRemoteTarget[0].trsf.rz = nVal[5]
+        else
+          pGoRemoteTarget[0].trsf.x = airexFinal[0].trsf.x
+          pGoRemoteTarget[0].trsf.y = airexFinal[0].trsf.y
+          pGoRemoteTarget[0].trsf.z = airexFinal[0].trsf.z
+          pGoRemoteTarget[0].trsf.rx = airexFinal[0].trsf.rx
+          pGoRemoteTarget[0].trsf.ry = airexFinal[0].trsf.ry
+          pGoRemoteTarget[0].trsf.rz = airexFinal[0].trsf.rz
+        endIf
+        
+        call goRemote()
+      endIf
+      
+    
+      //    sSendMsg = "ss received ->" + sReceiveMsg + "<-"
+      //    for i = 0 to len(sSendMsg)
+      //      numSendMsg[i] = asc(sSendMsg[i],0)  
+      //    endFor
+      //    sioSet(sioSockets_server, numSendMsg)
+
+      //sioSet()
+      //    // write
+      //    ? sSendMsg = "Hello I'm the cms-ts2-60 server " 
+      //    for i = 0 to len(sSendMsg)-1
+      //      l_nResult=sioSet(sioSockets_server, asc(sSendMsg,i)) 
+      //      if l_nResult != 1
+      //        i = len(sSendMsg)
+      //        l_bError = true
+      //      endIf
+      //    endFor
+      //    // connection will close
+      //    ? "TCP/IP server end"
+      //    wait(false)
+    endIf
+  endWhile
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,24 @@
+﻿{
+    "version": "200.5",
+    "flange_selected": true,
+    "base_position": {
+        "rz": 0.0
+    },
+    "orphan_volumes": {
+        "controlSpeedInside": false,
+        "box": [],
+        "cylinder": [],
+        "vertical_half_space": [],
+        "horizontal_half_space": []
+    },
+    "is_j100_pulsed": true,
+    "is_j101_pulsed": true,
+    "profile_activate": false,
+    "profile_address": 1,
+    "working_mode": 2,
+    "use_manual_fast": true,
+    "restart_control": 2,
+    "restart_timeout": 2100000000.0,
+    "restart_warning": 496.0,
+    "restart_slow": 2000.0
+}

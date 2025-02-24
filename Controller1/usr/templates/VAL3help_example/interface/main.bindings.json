@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "bindings": [
+    {
+      "id": "wdOutput",
+      "attribute": "innerHTML",
+      "data": "sOutput[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    }
+  ],
+  "callbacks": [
+    {
+      "id": "wdExitButton",
+      "event": "click",
+      "data": "exit",
+      "priority": 10
+    }
+  ]
+}

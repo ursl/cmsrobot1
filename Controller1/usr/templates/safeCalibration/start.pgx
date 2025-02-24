@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_bResult" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  // ---------------------------------------------------------------------------------------------
+  // Revision history
+  //   + means addition
+  //   - means removal
+  //   ~ means change
+  //
+  // 20170929 AJAF
+  //   + Analysis of safe Velocity, safe Position, safe Recovery status to make only what is needed
+  // 20171004 AJAF
+  //   + User interface
+  // 20171128 AJAF
+  //   ~ Conversion to s8.4.1
+  //   ~ Hmi task for permanent update.
+  // 20180130 AJAF
+  //   ~ Correct reset status 
+  // 20180321 AJAF V5
+  //   + Add a disablePower at the start to prevent trouble
+  // 20180427 AJAF V6
+  //   + Add USID1 activation check
+  // ---------------------------------------------------------------------------------------------
+  //  jStart: point from which we can start to make safety referencing
+  //  jInter[0]: access point to reach first reference point. To be teached
+  //  jInter[1]: access point to reach second reference point . To be teached
+  //  trAppro: approche done to came close to reference point. to be adjusted below
+  // ---------------------------------------------------------------------------------------------
+
+
+  // Init appro to reference points
+  trAppro={0,0,-50,0,0,0}
+
+  // Get safe referencing position
+  jSafeReference1=getJntRef("safeReference1")
+  jSafeReference2=getJntRef("safeReference2")
+
+  // Init variable
+  bFinished=false
+  bEnded=true
+
+  taskCreate "tHmi",10,tHmi()
+  wait(taskStatus("tHmi")==1)
+
+  // Wait Hmi initialization is finished
+  wait(bEnded==false)
+
+  // Display HMI
+  userPage("main")
+  
+  // Be sure nothing prevent process
+  disablePower()
+  dioSet(dQNoSafePos,0)
+  
+  // Invalid
+  if nSafeRefStatus==5
+    sHmiTxt["Processing"]="Reference re-initialization ..."
+    // Manual mode only
+    if workingMode()!=1
+      sHmiTxt["ReqAction"]="Waiting manual mode ..."
+      wait(workingMode()==1)
+      sHmiTxt["ReqAction"]=""
+    endIf
+    // Reference reinitialization
+    dioSet(dQresetRef,0)
+    delay(2)
+    dioSet(dQresetRef,1)
+    delay(2)
+    dioSet(dQresetRef,0)
+    delay(2)
+    // Check if a safety reset is needed
+    l_bResult=true
+    if (esStatus()==1)
+      sHmiTxt["ReqAction"]="Doing safety reset ..."
+      l_bResult=setSafetyRestart()
+      if l_bResult
+        sHmiTxt["ReqAction"]=""
+      else
+        sHmiTxt["ReqAction"]="Failed to make safety reset."
+      endIf
+    endIf
+  endIf
+
+  // Reset
+  if (nSafeRefStatus==4) or (nSafeRefStatus==3)
+    sHmiTxt["Processing"]="Doing first reference point ..."
+    // Manual mode only
+    if workingMode()!=1
+      sHmiTxt["ReqAction"]="Waiting manual mode ..."
+      wait(workingMode()==1)
+      sHmiTxt["ReqAction"]=""
+    endIf
+    // Check if a safety reset is needed
+    l_bResult=true
+    if (esStatus()==1)
+      sHmiTxt["ReqAction"]="Doing safety reset ..."
+      l_bResult=setSafetyRestart()
+      if l_bResult
+        sHmiTxt["ReqAction"]=""
+      else
+        sHmiTxt["ReqAction"]="Failed to make safety reset."
+      endIf
+    endIf
+    if l_bResult
+      // Arm power ON
+      sHmiTxt["ReqAction"]="Please turn arm power ON"
+      wait(isPowered())
+      sHmiTxt["ReqAction"]=""
+      // Go to zero
+      resetMotion(jStart)
+      // Do first referencing
+      movej(jInter[0],flange,mNomSpeed)
+      pTmp=appro(jointToPoint(flange,world,jSafeReference1),trAppro)
+      bResult=pointToJoint(flange,jSafeReference1,pTmp,jTmp)
+      if bResult
+        movej(jTmp,flange,mNomSpeed)
+      endIf
+      movej(jSafeReference1,flange,mNomSpeed)
+      waitEndMove()
+      disablePower()
+      delay(0.5)
+
+      if(herej()!=jSafeReference1) and (dioGet(dQrefPos1)==0)
+        sHmiTxt["Processing"]="Warning: At least one axis has moved during first reference point. Check current position compared to safety ones."
+        sHmiBgn["Processing"]=sHmiColorDef["WarningBgn"]
+      endIf
+      
+      if dioGet(dUSID1)==0
+        sHmiTxt["Processing"]="Error: USID1 is not activated. Check sensor connected on USID1"
+        sHmiColor["Processing"]=sHmiColorDef["ErrorColor"]
+        sHmiBgn["Processing"]=sHmiColorDef["ErrorBgn"]
+        sHmiTxt["CurrentStatus"]="Sensor on USID1 not working"
+      endIf
+
+      if workingMode()==1
+        sHmiTxt["ReqAction"]="Please turn arm power ON"
+        wait(isPowered())
+        sHmiTxt["ReqAction"]=""
+      else
+        enablePower()
+      endIf
+      if bResult
+        movej(jTmp,flange,mNomSpeed)
+      endIf
+      movej(jInter[0],flange,mNomSpeed)
+      waitEndMove()
+    endIf
+  endIf
+
+  // Defined or in warning period
+  if (nSafeRefStatus==2) or (nSafeRefStatus==1)
+    sHmiTxt["Processing"]="Doing second reference point ..."
+    // Manual or remote mode only
+    if workingMode()!=1 and workingMode()!=4
+      sHmiTxt["ReqAction"]="Waiting manual or remote mode ..."
+      wait((workingMode()==1) or (workingMode()==4))
+      sHmiTxt["ReqAction"]=""
+    endIf
+    // Check if a safety reset is needed
+    l_bResult=true
+    if (esStatus()==1)
+      sHmiTxt["ReqAction"]="Doing safety reset ..."
+      l_bResult=setSafetyRestart()
+      if l_bResult
+        sHmiTxt["ReqAction"]=""
+      else
+        sHmiTxt["ReqAction"]="Failed to make safety reset."
+      endIf
+    endIf
+    if l_bResult
+      // Arm power ON
+      if workingMode()==1
+        sHmiTxt["ReqAction"]="Please turn arm power ON"
+        wait(isPowered())
+        sHmiTxt["ReqAction"]=""
+      else
+        enablePower()
+      endIf
+      // Go to jStart if not close to jInter
+      if(abs(herej()-jInter[0])>jTolerance) and (abs(herej()-jInter[1])>jTolerance)
+        movej(jStart,flange,mNomSpeed)
+      endIf
+      // Do second referencing
+      movej(jInter[1],flange,mNomSpeed)
+      pTmp=appro(jointToPoint(flange,world,jSafeReference2),trAppro)
+      bResult=pointToJoint(flange,jSafeReference2,pTmp,jTmp)
+      if bResult
+        movej(jTmp,flange,mNomSpeed)
+      endIf
+      movej(jSafeReference2,flange,mNomSpeed)
+      waitEndMove()
+      disablePower()
+      delay(0.5)
+      
+      if dioGet(dUSID1)==0
+        sHmiTxt["Processing"]="Error: USID1 is not activated. Check sensor connected on USID1"
+        sHmiColor["Processing"]=sHmiColorDef["ErrorColor"]
+        sHmiBgn["Processing"]=sHmiColorDef["ErrorBgn"]
+        sHmiTxt["CurrentStatus"]="Sensor on USID1 not working"
+      endIf
+      
+      if workingMode()==1
+        sHmiTxt["ReqAction"]="Please turn arm power ON"
+        wait(isPowered())
+        sHmiTxt["ReqAction"]=""
+      else
+        enablePower()
+      endIf
+      if bResult
+        movej(jTmp,flange,mNomSpeed)
+      endIf
+      movej(jStart,flange,mNomSpeed)
+      waitEndMove()
+      disablePower()
+    endIf
+  endIf
+  bEnded=true
+
+  // Finished
+  wait(bFinished)
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controller>
+  <String name="VAL 3" value="Demo" />
+  <Bool name="buildSerial" value="false" />
+  <String name="UserApp" value="usrapp" />
+  <String name="templateDir" value="templates" />
+  <uniVALparams>
+    <String name="fieldbus" value="" />
+  </uniVALparams>
+  <String name="simulMode" value="simulation" />
+  <Safety>
+    <String name="program" value="0.030" />
+    <String name="configurationCRC" value="__UNDEFINED!!__" />
+    <Bool name="mcpMode" value="true" />
+    <Bool name="testMode" value="true" />
+    <Bool name="mcpRestart" value="false" />
+    <Bool name="wms" value="false" />
+    <Bool name="valvesSafeControl" value="false" />
+    <Float name="defaultStopTime" value="0" />
+    <usiA>
+      <Bool name="auto" value="false" />
+      <Bool name="manu" value="false" />
+      <Bool name="restart" value="false" />
+      <Bool name="ss1" value="false" />
+      <Bool name="ss2" value="false" />
+      <Bool name="sls" value="false" />
+      <Float name="stopTime" value="0" />
+      <Bool name="eStop" value="false" />
+    </usiA>
+    <usiB>
+      <Bool name="auto" value="false" />
+      <Bool name="manu" value="false" />
+      <Bool name="restart" value="false" />
+      <Bool name="ss1" value="false" />
+      <Bool name="ss2" value="false" />
+      <Bool name="sls" value="false" />
+      <Float name="stopTime" value="0" />
+      <Bool name="zone" value="false" />
+    </usiB>
+    <usiC>
+      <Bool name="auto" value="false" />
+      <Bool name="manu" value="false" />
+      <Bool name="restart" value="false" />
+      <Bool name="ss1" value="false" />
+      <Bool name="ss2" value="false" />
+      <Bool name="sls" value="false" />
+      <Float name="stopTime" value="0" />
+      <Bool name="zone" value="false" />
+    </usiC>
+    <usiD>
+      <Bool name="auto" value="false" />
+      <Bool name="manu" value="false" />
+      <Bool name="restart" value="false" />
+      <Bool name="ss1" value="false" />
+      <Bool name="ss2" value="false" />
+      <Bool name="sls" value="false" />
+      <Float name="stopTime" value="0" />
+    </usiD>
+  </Safety>
+  <PCC>
+    <String name="Name" value="" />
+    <String name="System" value="" />
+    <String name="Config" value="" />
+  </PCC>
+  <String name="starcFirmware" value="" />
+  <Bool name="legacyEditor" value="false" />
+  <String name="serialNumber" value="F_20_0018274_C_001" />
+  <Int name="traceSignals" value="-1" />
+  <Bool name="logging" value="true" />
+  <Bool name="cpuExtPowerSupply" value="false" />
+  <Float name="lliCycleTime" value="-1" />
+  <Float name="powerHourCount" value="94.138545" />
+</controller>

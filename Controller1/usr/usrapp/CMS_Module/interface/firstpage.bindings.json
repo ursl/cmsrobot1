@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "bindings": [
+    {
+      "id": "iconVacuumStatus1",
+      "attribute": "style.backgroundColor",
+      "data": "colorVacuumStatus1[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "iconGlueAirex",
+      "attribute": "style.backgroundColor",
+      "data": "statusDoAirex[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "iconCleanupChuck1",
+      "attribute": "style.backgroundColor",
+      "data": "statusCleanupChuck1[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "iconGlueModules",
+      "attribute": "style.backgroundColor",
+      "data": "statusDoModules[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "iconCleanupChuck2",
+      "attribute": "style.backgroundColor",
+      "data": "statusCleanupChuck2[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "chk0",
+      "attribute": "checked",
+      "data": "bSelectedItems[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk1",
+      "attribute": "checked",
+      "data": "bSelectedItems[1]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk2",
+      "attribute": "checked",
+      "data": "bSelectedItems[2]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk3",
+      "attribute": "checked",
+      "data": "bSelectedItems[3]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk4",
+      "attribute": "checked",
+      "data": "bSelectedItems[4]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk5",
+      "attribute": "checked",
+      "data": "bSelectedItems[5]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chkSkipGlue",
+      "attribute": "checked",
+      "data": "bSkipGlue[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "txt1",
+      "attribute": "value",
+      "data": "strStatus[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "txt2",
+      "attribute": "value",
+      "data": "sPosition[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "nmb1",
+      "attribute": "value",
+      "data": "speedFactor[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "rng1",
+      "attribute": "value",
+      "data": "speedFactor[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "txt3",
+      "attribute": "value",
+      "data": "version[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "txtTCPIP",
+      "attribute": "value",
+      "data": "strTCPIP[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "chk6",
+      "attribute": "checked",
+      "data": "bSockets[0]",
+      "size": 1,
+      "direction": "rw",
+      "refresh": 1
+    },
+    {
+      "id": "txtID",
+      "attribute": "value",
+      "data": "sMovementID[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    }
+  ],
+  "callbacks": [
+    {
+      "id": "btn_DoAirex",
+      "event": "click",
+      "data": "clkDoAirex",
+      "priority": 10
+    },
+    {
+      "id": "btn1",
+      "event": "click",
+      "data": "clkPark1",
+      "priority": 10
+    },
+    {
+      "id": "btnPark2",
+      "event": "click",
+      "data": "clkPark2",
+      "priority": 10
+    },
+    {
+      "id": "btn_ventil1",
+      "event": "click",
+      "data": "clkValvePage",
+      "priority": 10
+    },
+    {
+      "id": "btn_CleanupChuck1",
+      "event": "click",
+      "data": "clkCleanupChuck1",
+      "priority": 10
+    },
+    {
+      "id": "btn_doModules",
+      "event": "click",
+      "data": "clkDoModules",
+      "priority": 10
+    },
+    {
+      "id": "btn_CleanupChuck2",
+      "event": "click",
+      "data": "clkCleanupChuck2",
+      "priority": 10
+    },
+    {
+      "id": "btn_doTest",
+      "event": "click",
+      "data": "clkGlueGlass",
+      "priority": 10
+    },
+    {
+      "id": "btn3",
+      "event": "click",
+      "data": "socketServer",
+      "priority": 10
+    },
+    {
+      "id": "btn_EndProgram",
+      "event": "click",
+      "data": "clkEndProgram",
+      "priority": 10
+    },
+    {
+      "id": "btn2",
+      "event": "click",
+      "data": "clkAllOn",
+      "priority": 10
+    },
+    {
+      "id": "btn2_Copy1",
+      "event": "click",
+      "data": "clkAllOff",
+      "priority": 10
+    }
+  ],
+  "events": []
+}

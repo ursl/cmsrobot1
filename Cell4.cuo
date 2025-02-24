@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CellUserOptions>
+  <Controller Name="Controller1">
+    <Application>Disk://CMS_Module/CMS_Module.pjx</Application>
+  </Controller>
+  <Option Name="DataTreeView">
+    <Nodes>
+      <Node Path="Cell4" IsExpanded="true" />
+      <Node Path="Cell4\Controller1" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="CellExplorer">
+    <Nodes>
+      <Node Path="Cell4" IsExpanded="true" />
+      <Node Path="Cell4\Controller1" IsExpanded="true" />
+      <Node Path="Cell4\Controller1\Disk:##CMS_Module#CMS_Module.pjx" IsExpanded="true" />
+      <Node Path="Cell4\Controller1\Disk:##CMS_Module#CMS_Module.pjx\doAirex" IsExpanded="true" />
+      <Node Path="Cell4\Controller1\Disk:##CMS_Module#CMS_Module.pjx\start" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="GeometryView">
+    <Nodes>
+      <Node Path="Cell4" IsExpanded="true" />
+      <Node Path="Cell4\Controller1" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="Breakpoints">
+    <Breakpoints />
+  </Option>
+  <Option Name="IOsControlPanel">
+    <Ios />
+  </Option>
+  <Option Name="Watches">
+    <Watches />
+  </Option>
+  <Option Name="ExpressionWatches">
+    <ExpressionWatches>
+      <ExpressionWatch></ExpressionWatch>
+    </ExpressionWatches>
+  </Option>
+  <Option Name="3DView">
+    <_3DView Visible="false" />
+  </Option>
+  <Option Name="SynchronizerMode">
+    <Synchronizers>
+      <Synchronizer Controller="Controller1" Mode="Emulator" />
+    </Synchronizers>
+  </Option>
+  <Option Name="Safety">
+    <Safeties>
+      <Safety Controller="Controller1" Visible="false" />
+    </Safeties>
+  </Option>
+</CellUserOptions>

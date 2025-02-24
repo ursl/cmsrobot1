@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="tHmi">
+    <Locals>
+      <Local name="l_sIndex" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  // Situation analysis
+  // ------------------
+  // Safe position OFF, Safe velocity OFF, Safe recovery OFF -> Invalid -> Reinit
+  // Safe position OFF, Safe velocity ON, Safe recovery OFF  -> Reset -> Goto refPos1
+  // Safe position OFF, Safe velocity OFF, Safe recovery ON  -> Lost -> Goto refPos1
+  // Safe position ON, Safe velocity OFF, Safe recovery ON   -> Defined -> Goto refPos2
+  // Safe position ON, Safe velocity OFF, Safe recovery OFF  -> Checked
+
+  // Init variables
+  sVersion="V6.0"
+  l_sIndex=first(sHmiBgn)
+  // Background
+  while l_sIndex!=""
+    sHmiBgn[l_sIndex]=""
+    l_sIndex=next(sHmiBgn[l_sIndex])
+  endWhile
+  // Color
+  l_sIndex=first(sHmiColor)
+  while l_sIndex!=""
+    sHmiColor[l_sIndex]=sHmiColorDef["DefaultColor"]
+    l_sIndex=next(sHmiColor[l_sIndex])
+  endWhile
+  // Text
+  l_sIndex=first(sHmiTxt)
+  while l_sIndex!=""
+    sHmiTxt[l_sIndex]=""
+    l_sIndex=next(sHmiTxt[l_sIndex])
+  endWhile
+
+  sBtnFinished="hidden"
+  nSafeRefStatus=abs(getSafeRefStatus())
+  nPrevSafeRefStatus=-2000
+  bEnded=false
+
+  while !bEnded
+    // QrefPos1
+    if dioGet(dQrefPos1)==0
+      sHmiTxt["QrefPos1"]="Off"
+      sHmiColor["QrefPos1"]=sHmiColorDef["OffColor"]
+      sHmiBgn["QrefPos1"]=sHmiColorDef["OffBgn"]
+    else
+      sHmiTxt["QrefPos1"]="On"
+      sHmiColor["QrefPos1"]=sHmiColorDef["OnColor"]
+      sHmiBgn["QrefPos1"]=sHmiColorDef["OnBgn"]
+    endIf
+
+    // QrefPos2
+    if dioGet(dQrefPos2)==0
+      sHmiTxt["QrefPos2"]="Off"
+      sHmiColor["QrefPos2"]=sHmiColorDef["OffColor"]
+      sHmiBgn["QrefPos2"]=sHmiColorDef["OffBgn"]
+    else
+      sHmiTxt["QrefPos2"]="On"
+      sHmiColor["QrefPos2"]=sHmiColorDef["OnColor"]
+      sHmiBgn["QrefPos2"]=sHmiColorDef["OnBgn"]
+    endIf
+
+    // Safe position
+    if dioGet(dIsafePos)==0
+      sHmiTxt["SafePosition"]="Off"
+      sHmiColor["SafePosition"]=sHmiColorDef["OffColor"]
+      sHmiBgn["SafePosition"]=sHmiColorDef["OffBgn"]
+    else
+      sHmiTxt["SafePosition"]="On"
+      sHmiColor["SafePosition"]=sHmiColorDef["OnColor"]
+      sHmiBgn["SafePosition"]=sHmiColorDef["OnBgn"]
+    endIf
+
+    // Safe velocity
+    if dioGet(dIsafeVel)==0
+      sHmiTxt["SafeVelocity"]="Off"
+      sHmiColor["SafeVelocity"]=sHmiColorDef["OffColor"]
+      sHmiBgn["SafeVelocity"]=sHmiColorDef["OffBgn"]
+    else
+      sHmiTxt["SafeVelocity"]="On"
+      sHmiColor["SafeVelocity"]=sHmiColorDef["OnColor"]
+      sHmiBgn["SafeVelocity"]=sHmiColorDef["OnBgn"]
+    endIf
+
+    // Safe recovery
+    if dioGet(dIsafeRec)==0
+      sHmiTxt["SafeRecovery"]="Off"
+      sHmiColor["SafeRecovery"]=sHmiColorDef["OffColor"]
+      sHmiBgn["SafeRecovery"]=sHmiColorDef["OffBgn"]
+    else
+      sHmiTxt["SafeRecovery"]="On"
+      sHmiColor["SafeRecovery"]=sHmiColorDef["OnColor"]
+      sHmiBgn["SafeRecovery"]=sHmiColorDef["OnBgn"]
+    endIf
+
+    // Referencing status
+    nSafeRefStatus=abs(getSafeRefStatus())
+    if nSafeRefStatus!=nPrevSafeRefStatus
+
+      sHmiColor["CurrentStatus"]=sHmiColorDef["OkColor"]
+      sHmiBgn["CurrentStatus"]=""
+
+      l_sIndex=first(sHmiStatusBgn)
+      while l_sIndex!=""
+        sHmiStatusBgn[l_sIndex]=sHmiColorDef["DefaultBgn"]
+        l_sIndex=next(sHmiStatusBgn[l_sIndex])
+      endWhile
+
+      l_sIndex=first(sHmiStatusColor)
+      while l_sIndex!=""
+        sHmiStatusColor[l_sIndex]=sHmiColorDef["DefaultColor"]
+        l_sIndex=next(sHmiStatusColor[l_sIndex])
+      endWhile
+
+      switch nSafeRefStatus
+        case 0
+          sHmiTxt["CurrentStatus"]="Checked"
+          sHmiStatusColor["Checked"]=sHmiColorDef["OkColor"]
+          sHmiStatusBgn["Checked"]=sHmiColorDef["OkBgn"]
+        break
+
+        case 1
+          sHmiTxt["CurrentStatus"]="Checked but in the timeout delay"
+          sHmiStatusColor["Warning"]=sHmiColorDef["WarningColor"]
+          sHmiStatusBgn["Warning"]=sHmiColorDef["WarningBgn"]
+        break
+
+        case 2
+          sHmiTxt["CurrentStatus"]="Defined"
+          sHmiStatusColor["Defined"]=sHmiColorDef["InProgressColor"]
+          sHmiStatusBgn["Defined"]=sHmiColorDef["InProgressBgn"]
+        break
+
+        case 3
+          sHmiTxt["CurrentStatus"]="Lost"
+          sHmiStatusColor["Lost"]=sHmiColorDef["ErrorColor"]
+          sHmiStatusBgn["Lost"]=sHmiColorDef["ErrorBgn"]
+        break
+
+        case 4
+          sHmiTxt["CurrentStatus"]="Reset"
+          sHmiStatusColor["Reset"]=sHmiColorDef["InProgressColor"]
+          sHmiStatusBgn["Reset"]=sHmiColorDef["InProgressBgn"]
+        break
+
+        case 5
+          sHmiTxt["CurrentStatus"]="Invalid"
+          sHmiStatusColor["Invalid"]=sHmiColorDef["ErrorColor"]
+          sHmiStatusBgn["Invalid"]=sHmiColorDef["ErrorBgn"]
+        break
+
+        case 100
+          sHmiTxt["CurrentStatus"]="Failed to read safety configuration"
+          sHmiColor["CurrentStatus"]=sHmiColorDef["ErrorColor"]
+          sHmiBgn["CurrentStatus"]=sHmiColorDef["ErrorBgn"]
+        break
+
+        default
+          sHmiTxt["CurrentStatus"]="Unknown"
+          sHmiColor["CurrentStatus"]=sHmiColorDef["ErrorColor"]
+          sHmiBgn["CurrentStatus"]=sHmiColorDef["ErrorBgn"]
+        break
+      endSwitch
+      nPrevSafeRefStatus=nSafeRefStatus
+    endIf
+
+    delay(0)
+  endWhile
+
+  // Final status
+  if bEnded==true and sBtnFinished!="visible"
+    sBtnFinished="visible"
+    sHmiTxt["Processing"]=""
+    sHmiTxt["ReqAction"]=""
+    if nSafeRefStatus==0
+      sHmiTxt["Processing"]="Safe referencing OK"
+      sHmiColor["Processing"]=sHmiColorDef["OkColor"]
+      sHmiBgn["Processing"]=sHmiColorDef["OkBgn"]
+    else
+      sHmiTxt["Processing"]="Safe referencing failed. Status is: "+sHmiTxt["CurrentStatus"]
+      sHmiColor["Processing"]=sHmiColorDef["ErrorColor"]
+      sHmiBgn["Processing"]=sHmiColorDef["ErrorBgn"]
+    endIf
+  endIf
+end]]></Code>
+  </Program>
+</Programs>

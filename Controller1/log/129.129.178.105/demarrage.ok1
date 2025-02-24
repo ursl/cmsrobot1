@@ -1,0 +1,27 @@
+ 
+06/04/20 16:28:08 ;_EVT1 ;0 ;1 ;Nouveau Test v5.0 F_20_0018274_C_001
+06/04/20 16:28:23 ;_EVT2 ;0   ;1 ;Robot calibre
+06/04/20 16:28:25 ;_EVT89 ;0   ;1 ;Nouveau test WMS-MCP
+06/04/20 16:28:31 ;_EVT90 ;0   ;1 ;Mode de marche MANUEL OK
+06/04/20 16:28:32 ;_EVT112 ;0   ;1 ;Test RESTART WMS OK
+06/04/20 16:28:34 ;_EVT95 ;0   ;1 ;Puissance bras ON
+06/04/20 16:28:35 ;_EVT96 ;0   ;1 ;ARU TEACH APPUYE OK
+06/04/20 16:28:35 ;_EVT97 ;0   ;1 ;ARU TEACH RELACHE OK
+06/04/20 16:28:36 ;_EVT95 ;0   ;1 ;Puissance bras ON
+06/04/20 16:28:37 ;_EVT101 ;0   ;1 ;Homme mort ouvert OK
+06/04/20 16:28:38 ;_EVT95 ;0   ;1 ;Puissance bras ON
+06/04/20 16:28:38 ;_EVT101 ;0   ;1 ;Homme mort ouvert OK
+06/04/20 16:28:39 ;_EVT92 ;0   ;1 ;Mode de marche AUTO LOCAL OK
+06/04/20 16:28:40 ;_EVT98 ;0   ;1 ;ARU WMS appuyé OK
+06/04/20 16:28:41 ;_EVT99 ;0   ;1 ;ARU WMS libéré OK
+06/04/20 16:28:41 ;_EVT93 ;0   ;1 ;Mode de marche AUTO DEPORTE OK
+06/04/20 16:28:41 ;_EVT110 ;0   ;1 ;Test WMS-MCP bon
+06/04/20 16:28:45 ;_EVT3 ;0   ;1 ;Bras sous puissance
+06/04/20 16:28:45 ;_EVT9 ;0   ;1 ;Axe 1 2 3 4 5 6 Vitesse MVT_DEFAUT=100% AR 5
+06/04/20 16:29:15 ;_EVT3 ;30.2 ;1 ;Bras sous puissance
+06/04/20 16:29:17 ;_EVT3 ;31.3 ;1 ;Bras sous puissance
+06/04/20 16:29:18 ;_EVT3 ;32.4 ;1 ;Bras sous puissance
+06/04/20 16:29:19 ;_EVT3 ;33.4 ;1 ;Bras sous puissance
+06/04/20 16:29:20 ;_EVT3 ;34.5 ;1 ;Bras sous puissance
+06/04/20 16:29:21 ;_EVT3 ;35.6 ;1 ;Bras sous puissance
+06/04/20 16:29:22 ;_EVT6 ;37   ;1 ;Test bon

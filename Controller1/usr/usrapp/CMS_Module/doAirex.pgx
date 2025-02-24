@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="doAirex">
+    <Locals>
+      <Local name="nAirexIdx" type="num" xsi:type="array" size="1" />
+      <Local name="vacuumCheckDone" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  vacuumCheckDone = false
+  while true
+    call parkEndProgram()
+    
+    if bDoAirex==true
+      call selectedCheck()
+      call print("starting doAirex")
+      statusDoAirex = colorRunning
+      
+      // -- check that relevant vacuum is active
+      if !bSelectItem
+        // -- check all
+        call print("check vacuum on all")
+        delay(waitShort)
+        for nAirexIdx = 0 to 5
+          // -- check only the sensor valves, not the AIREX frame valves (don't care about those)
+          if statusValves[sensorValve[nAirexIdx]] == 0
+            bDoAirex = false
+            statusDoAirex = colorError
+            call print("Error: no vacuum at position " + toString("1.0", nAirexIdx))
+          endIf
+        endFor
+      else 
+        // -- check only those that are selected
+        call print("check vacuum on selection")
+        delay(waitShort)
+        for nAirexIdx = 0 to 5
+          if statusValves[sensorValve[nAirexIdx]] == 0 and (bSelectedItems[nAirexIdx]==true)
+            bDoAirex = false
+            statusDoAirex = colorError
+            call print("Error: no vacuum at position " + toString("1.0", nAirexIdx))
+          endIf
+        endFor
+      endIf
+      vacuumCheckDone = true
+      if bDoAirex == false
+        call print("Fix missing vacuum and try again")
+        vacuumCheckDone = false
+      endIf
+
+    endIf
+    
+    // -- return above does not work. It terminates the task!
+    if bDoAirex==true and vacuumCheckDone==true
+      call setSpeed()
+      
+      if bSkipGlue[0]==false
+        call print("picking glue stamp")
+        // -- pick glue stamp
+        call moveDown(airexGlueStampHome, mSlow, trZero, false, trXYZero)
+        waitEndMove()
+        movel(appro(airexGlueStampHome, trPressTwo), tTool, mVerySlow)
+        waitEndMove()
+        delay(waitShort)
+        switchMagnet=true
+        movel(appro(airexGlueStampHome, trZsafe), tTool, mSlow)
+
+        call parkEndProgram()        
+        
+        // -- double-dip stamp into glue before starting the normal procedure
+        call moveDown(glueFirstPoint[1], mSlow, trZero, false, trXYZero)
+        delay(waitGlue)
+        call moveStampUp(glueFirstPoint[1], mVerySlow, trXYZero)
+        call moveDown(glueFirstPoint[0], mSlow, trZero, false, trXYZero)
+        delay(waitGlue)
+        call moveStampUp(glueFirstPoint[0], mVerySlow, trXYZero)
+      
+        call parkEndProgram()
+        
+        // -- apply glue stamp to all positions:
+        //    divide approach onto /from glue position into two steps
+        //    (1) slowly to trApproach above it
+        //    (2) extremely slowly down to/up from glue to trApproach 
+        for nAirexIdx=0 to 5
+          if !bSelectItem or (bSelectedItems[nAirexIdx]==true)
+            call setSpeed()
+            if bDoAirex==true
+
+              call parkEndProgram()
+
+              call print("getting glue for position " + toString("1.0", nAirexIdx))
+              call moveDown(gluePickPoint[nAirexIdx], mSlow, trOne, false, trXYZero)         
+              delay(waitGlue)
+              
+              call moveStampUp(gluePickPoint[nAirexIdx], mVerySlow, trXYZero)
+              
+              call parkEndProgram()
+            
+              // -- move to where the glue should be applied (the final airex position)
+              call print("applying glue to position " + toString("1.0", nAirexIdx))
+              call moveDown(airexFinal[nAirexIdx], mVerySlow, trStampHDI, false, trXYZero)
+              waitEndMove()
+              delay(waitGlue)
+              call moveStampUp(airexFinal[nAirexIdx], mVerySlow, trXYZero)
+            endIf
+          endIf
+        endFor
+
+        // -- Drop glue stamp
+        call setSpeed()
+        call print("put away glue stamp")
+        call moveDown(airexGlueStampEnd, mSlow, trPressTwo, false, trXYZero)
+        waitEndMove()
+        switchMagnet = false
+        movel(appro(airexGlueStampEnd, trZsafe), tTool, mNomSpeed)
+      endIf
+      
+      if !bSelectItem
+        call print("handling all airex frames")
+      else 
+        call print("handling selected airex frames")
+      endIf
+      
+      // -- pick weighted vacuum chucks and lift airex frames to HDIs
+      for nAirexIdx=0 to 5
+        if !bSelectItem or (bSelectedItems[nAirexIdx]==true)
+          call setSpeed()
+          if bDoAirex==true
+            // -- move over/to chuck
+            call moveDown(chuck1[nAirexIdx], mSlow, trZero, false, trXYZero)
+            // -- the following cures the click when the chuck 'jumps' up a bit
+            waitEndMove()
+            movel(appro(chuck1[nAirexIdx], trPressTwo), tTool, mVerySlow)
+            waitEndMove()
+         
+            // -- pick chuck and move up
+            switchMagnet=true
+            delay(waitShort)
+            call print("picking airex frame " + toString("1.0", nAirexIdx))
+            movel(appro(chuck1[nAirexIdx], trZsafe), tTool, mSlow)
+          
+            // -- move with chuck to airex position 
+            call moveDown(airexInitial[nAirexIdx], mSlow, trZero, false, trXYZero)
+        
+            // -- release airex vacuum to allow picking up
+            if statusValves[airexValve[nAirexIdx]]==1
+              call toggleValve(airexValve[nAirexIdx])
+            endIf
+            delay(waitShort)
+            switchVac0=true
+            switchVac1=true
+            delay(waitShort)
+
+            // -- move up with airex frame
+            call print("placing airex frame " + toString("1.0", nAirexIdx))
+            movel(appro(airexInitial[nAirexIdx], trZclose), tTool, mSlow)
+            movel(appro(airexInitial[nAirexIdx], trZsafe), tTool, mNomSpeed)
+
+            call parkEndProgram()
+          
+            // -- move to final airex position and put down 
+            call moveDown(airexFinal[nAirexIdx], mVerySlow, trZero, false, trXYZero)
+            switchVac0   = false
+            switchVac1   = false
+            switchMagnet = false
+
+            delay(waitShort)
+
+            // -- move up again
+            movel(appro(airexFinal[nAirexIdx], trZclose), tTool, mSlow)
+            movel(appro(airexFinal[nAirexIdx], trZsafe), tTool, mNomSpeed)
+          endIf
+        endIf
+      endFor
+
+      // -- move back somewhere
+      call print("parking robot")
+      //waitEndMove()
+      movej(jInitialPosition, tTool, mFast)
+      waitEndMove()
+      statusDoAirex = colorOn
+      
+      //call selectedClear()
+      bDoAirex=false
+      call print("glue airex done")
+    endIf
+  endWhile
+
+end]]></Code>
+  </Program>
+</Programs>

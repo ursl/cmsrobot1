@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="nIndex" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  call print("Welcome to TEPX module production")
+  version = "2025/02/25-05"
+  
+  strTCPIP = "TCP/IP sockets not activated"
+  bSockets = false
+  
+  // -- required for local automatic?
+  if esStatus() == 1
+    setSafetyRestart()
+  endIf
+  if workingMode()==3
+    if isPowered() == false
+      enablePower()
+    endIf
+  endIf
+
+  // -- define colors for valve buttons
+  colorOff     = "beige"
+  colorOn      = "darkgreen"
+  colorGray    = "gray"
+  colorRunning = "yellow"
+  colorError   = "red"
+  
+  // -- initialize valve buttons and status
+  call setValveStatus()
+  for nIndex = 0 to 31
+    if statusValves[nIndex] == 0
+      colorValveButton[nIndex] = colorOff
+    else
+      colorValveButton[nIndex] = colorOn
+    endIf
+  endFor
+
+  // -- initialize selection to be all on and bSelectItem to be off
+  for nIndex = 0 to 5
+    bSelectedItems[nIndex] = true
+  endFor
+  bSelectItem = false
+  
+  // -- initialize
+  switchMagnet = false
+  switchVac0   = false
+  switchVac1   = false
+  bDoAirex     = false
+  bGlueGlass   = false
+  bEndProgram  = false
+  
+  // -- airex valve indices
+  airexValve[0]=12
+  airexValve[1]=6
+  airexValve[2]=0
+  airexValve[3]=13
+  airexValve[4]=7
+  airexValve[5]=1
+
+  // -- hdi valve indices
+  hdiValve[0]=14
+  hdiValve[1]=8
+  hdiValve[2]=2
+  hdiValve[3]=16
+  hdiValve[4]=10
+  hdiValve[5]=4
+
+  // -- sensor valve indices
+  sensorValve[0]=15
+  sensorValve[1]=9
+  sensorValve[2]=3
+  sensorValve[3]=17
+  sensorValve[4]=11
+  sensorValve[5]=5
+
+  colorVacuumStatus1 = colorOff
+  colorCleanupChuck1 = colorOff
+  colorCleanupChuck2 = colorOff
+  
+  statusDoAirex       = colorGray
+  statusCleanupChuck1 = colorGray
+  statusDoModules     = colorGray
+  statusCleanupChuck2 = colorGray
+  
+  // -- define manual corrections for final placements
+  // trXYCorrectionHDI = trXYZero
+  trXYCorrectionHDI = trXYCorrection1
+  
+  // -- 4 is the production setting (mExtremelySlow = mSpeedArray[0])
+  // -- all the rest have faster mExtremelySlow
+  speedFactor = 4
+  call setSpeed()
+  
+  // -- display user page
+  userPage("firstpage")
+
+  // -- this is here that fPalette is defined for manual jogs after program has started
+  nError=setFrame(pFrameUrsprung, pFrameX, pFrameY, fPalette)
+  resetMotion()
+  movej(jInitialPosition, tTool, mNomSpeed)
+  waitEndMove()
+
+  taskCreate "doAirexTask", 10, doAirex()
+  taskCreate "doModulesTask", 10, doModules()
+  taskCreate "doGlueGlass", 10, glueGlass()
+
+  // Note: This is activated only after enabling arm power or move/hold button?! 
+  taskCreate "socketServerTask", 10, socketServer() 
+  
+  
+  while true
+    jPosition = herej()
+    sPosition = toString("6.3", jPosition.j3)
+    sMovementID = toString("6.3", getMoveId())
+  endWhile
+  
+end]]></Code>
+  </Program>
+</Programs>

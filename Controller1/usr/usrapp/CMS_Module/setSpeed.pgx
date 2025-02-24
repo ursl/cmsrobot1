@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="setSpeed">
+    <Code><![CDATA[begin
+  if speedFactor <= 1
+    mExtremelySlow = mSpeedArray[1]
+    mVerySlow      = mSpeedArray[1]
+    mSlow          = mSpeedArray[2]
+    mNomSpeed      = mSpeedArray[4]
+    mFast          = mSpeedArray[5]
+  elseIf speedFactor == 2
+    mExtremelySlow = mSpeedArray[2]
+    mVerySlow      = mSpeedArray[2]
+    mSlow          = mSpeedArray[3]
+    mNomSpeed      = mSpeedArray[5]
+    mFast          = mSpeedArray[7]
+   elseIf speedFactor == 3
+    mExtremelySlow = mSpeedArray[3]
+    mVerySlow      = mSpeedArray[3]
+    mSlow          = mSpeedArray[4]
+    mNomSpeed      = mSpeedArray[6]
+    mFast          = mSpeedArray[8]
+  elseIf speedFactor == 4
+    mExtremelySlow = mSpeedArray[0]
+    mVerySlow      = mSpeedArray[3]
+    mSlow          = mSpeedArray[5]
+    mNomSpeed      = mSpeedArray[7]
+    mFast          = mSpeedArray[9]
+  elseIf speedFactor >= 5
+    mExtremelySlow = mSpeedArray[3]
+    mVerySlow      = mSpeedArray[4]
+    mSlow          = mSpeedArray[5]
+    mNomSpeed      = mSpeedArray[7]
+    mFast          = mSpeedArray[9]
+endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

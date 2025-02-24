@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.10.2Cs9_BS1991" stackSize="20000" millimeterUnit="true" />
+  <Programs>
+    <Program file="clkAirexOff.pgx" />
+    <Program file="clkAirexOn.pgx" />
+    <Program file="clkAllOff.pgx" />
+    <Program file="clkAllOn.pgx" />
+    <Program file="clkBack.pgx" />
+    <Program file="clkCleanupChuck1.pgx" />
+    <Program file="clkCleanupChuck2.pgx" />
+    <Program file="clkDoAirex.pgx" />
+    <Program file="clkDoModules.pgx" />
+    <Program file="clkEndProgram.pgx" />
+    <Program file="clkGlueGlass.pgx" />
+    <Program file="clkPark1.pgx" />
+    <Program file="clkPark2.pgx" />
+    <Program file="clkValve0.pgx" />
+    <Program file="clkValve1.pgx" />
+    <Program file="clkValve10.pgx" />
+    <Program file="clkValve11.pgx" />
+    <Program file="clkValve12.pgx" />
+    <Program file="clkValve13.pgx" />
+    <Program file="clkValve14.pgx" />
+    <Program file="clkValve15.pgx" />
+    <Program file="clkValve16.pgx" />
+    <Program file="clkValve17.pgx" />
+    <Program file="clkValve2.pgx" />
+    <Program file="clkValve3.pgx" />
+    <Program file="clkValve4.pgx" />
+    <Program file="clkValve5.pgx" />
+    <Program file="clkValve6.pgx" />
+    <Program file="clkValve7.pgx" />
+    <Program file="clkValve8.pgx" />
+    <Program file="clkValve9.pgx" />
+    <Program file="clkValvePage.pgx" />
+    <Program file="doAirex.pgx" />
+    <Program file="doModules.pgx" />
+    <Program file="glueGlass.pgx" />
+    <Program file="goRemote.pgx" />
+    <Program file="moveDown.pgx" />
+    <Program file="moveStampUp.pgx" />
+    <Program file="park1.pgx" />
+    <Program file="parkEndProgram.pgx" />
+    <Program file="print.pgx" />
+    <Program file="selectedCheck.pgx" />
+    <Program file="selectedClear.pgx" />
+    <Program file="setSpeed.pgx" />
+    <Program file="setValveStatus.pgx" />
+    <Program file="socketServer.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+    <Program file="toggleValve.pgx" />
+  </Programs>
+  <Database>
+    <Data file="CMS_Module.dtx" />
+  </Database>
+  <Libraries />
+</Project>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_bOk" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  userPage()
+  
+  // if external 24V not activated, do nothing
+  if hasCpuExtPowerSupply()==false
+    logMsg("CPU has no external power Supply, skipped the test")
+  else
+    logMsg("CPU has an external power supply")
+    // We can monitor main power supply failure
+  
+    
+    l_bOk = false
+    while l_bOk==false
+      if dDioMainPowerOk==false
+        userPageAlert("power supply failure, wait power supply ok")
+        // TODO Save application data here
+        // ....
+        // wait for power and recover after power supply failure
+        while wakeUpRobot() != 0
+          delay(1)
+        endWhile
+        l_bOk = userPageConfirm("Press update button to complete robot restauration")
+      endIf
+      delay(1)
+    endWhile
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

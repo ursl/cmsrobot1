@@ -1,0 +1,317 @@
+{
+  "version": "1.0",
+  "bindings": [
+    {
+      "id": "lblSafePosition",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"SafePosition\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeVelocity",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"SafeVelocity\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeRecovery",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"SafeRecovery\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblProcessing",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"Processing\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafePosition",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"SafePosition\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeVelocity",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"SafeVelocity\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeRecovery",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"SafeRecovery\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafePosition",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"SafePosition\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeVelocity",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"SafeVelocity\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblSafeRecovery",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"SafeRecovery\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblReqAction",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"ReqAction\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblProcessing",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"Processing\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblProcessing",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"Processing\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "btnFinished",
+      "attribute": "style.visibility",
+      "data": "sBtnFinished[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos1",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"QrefPos1\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos1",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"QrefPos1\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos1",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"QrefPos1\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos2",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"QrefPos2\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos2",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"QrefPos2\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblQRefPos2",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"QrefPos2\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblReqAction",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"ReqAction\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblReqAction",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"ReqAction\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblCurrentStatus",
+      "attribute": "innerHTML",
+      "data": "sHmiTxt[\"CurrentStatus\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblCurrentStatus",
+      "attribute": "style.color",
+      "data": "sHmiColor[\"CurrentStatus\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblCurrentStatus",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiBgn[\"CurrentStatus\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusInvalid",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Invalid\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusInvalid",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Invalid\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusReset",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Reset\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusReset",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Reset\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusLost",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Lost\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusLost",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Lost\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusDefined",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Defined\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusDefined",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Defined\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusWarning",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Warning\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusWarning",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Warning\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusChecked",
+      "attribute": "style.color",
+      "data": "sHmiStatusColor[\"Checked\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblStatusChecked",
+      "attribute": "style.backgroundColor",
+      "data": "sHmiStatusBgn[\"Checked\"]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    },
+    {
+      "id": "lblVersion",
+      "attribute": "innerHTML",
+      "data": "sVersion[0]",
+      "size": 1,
+      "direction": "r",
+      "refresh": 1
+    }
+  ],
+  "callbacks": [
+    {
+      "id": "btnFinished",
+      "event": "click",
+      "data": "actBtnFinished",
+      "priority": 10
+    }
+  ]
+}

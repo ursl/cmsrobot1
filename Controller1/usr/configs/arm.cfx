@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<arm>
+  <String name="date" value="04 Dec 2020  11:55" />
+  <String name="orderNumber" value="F_20_0018274_A_001" />
+  <String name="arm" value="ts2_60-S1" />
+  <String name="tuning" value="" />
+  <String name="mount" value="floor" />
+  <Bool name="buckFull" value="false" />
+  <Valves>
+    <Valve index="0" >
+      <String name="type" value="32" />
+      <Float name="openDuration" value="0.1" />
+      <Float name="closeDuration" value="0.1" />
+    </Valve>
+    <Valve index="1" >
+      <String name="type" value="32" />
+      <Float name="openDuration" value="0.1" />
+      <Float name="closeDuration" value="0.1" />
+    </Valve>
+  </Valves>
+  <String name="oil" value="STD" />
+  <FloatArray name="minArmJointPos" >
+    <Float index="0" value="-9999999" />
+    <Float index="1" value="0.1" />
+    <Float index="2" value="-9999999" />
+    <Float index="3" value="-500" />
+  </FloatArray>
+  <FloatArray name="maxArmJointPos" >
+    <Float index="0" value="9999999" />
+    <Float index="1" value="9999999" />
+    <Float index="2" value="9999999" />
+    <Float index="3" value="500" />
+  </FloatArray>
+  <ArmJntRange>
+  </ArmJntRange>
+  <ArmJntRef>
+    <JntReferences id="J3BottomStop" category="" name="J3BottomStop" level="system" >
+      <FloatArray name="position" >
+        <Float index="0" value="-0.00266" />
+        <Float index="1" value="0.00552" />
+        <Float index="2" value="-4.97369" />
+        <Float index="3" value="-2.584642" />
+      </FloatArray>
+    </JntReferences>
+    <JntReferences id="factoryMarks" category="" name="factoryMarks" level="system" >
+      <FloatArray name="position" >
+        <Float index="0" value="-0.00266" />
+        <Float index="1" value="0.00552" />
+        <Float index="2" value="0" />
+        <Float index="3" value="-2.584642" />
+      </FloatArray>
+    </JntReferences>
+  </ArmJntRef>
+  <CalibrationArray>
+    <Calibration index="0"  position="-4947865" measure="-376984781" df="-0.000007" />
+    <Calibration index="1"  position="12333248" measure="-896351567" df="0.000007" />
+    <Calibration index="2"  position="268878" measure="-198265221" df="0.00001" />
+    <Calibration index="3"  position="3440597" measure="-330783697" df="0.000004" />
+  </CalibrationArray>
+  <PhasingArray>
+    <Phasing index="0"  zeroElec="81806" computedFrom="81806" />
+    <Phasing index="1"  zeroElec="222380" computedFrom="222380" />
+    <Phasing index="2"  zeroElec="336857" computedFrom="336857" />
+    <Phasing index="3"  zeroElec="385703" computedFrom="385703" />
+  </PhasingArray>
+  <DhArray name="dhOffset" >
+    <DH index="0" theta="0" d="0" a="0" b="0" alpha="0" beta="0" />
+    <DH index="1" theta="0" d="0" a="0" b="0" alpha="0" beta="0" />
+    <DH index="2" theta="0" d="0" a="0" b="0" alpha="0" beta="0" />
+    <DH index="3" theta="0" d="0" a="0" b="0" alpha="0" beta="0" />
+  </DhArray>
+  <Float name="flangeLengthOffset" value="0" />
+  <StringArray name="motorType" >
+    <String index="0" value="" />
+    <String index="1" value="" />
+    <String index="2" value="" />
+    <String index="3" value="" />
+  </StringArray>
+  <Bool name="hardStopAxis1" value="false" />
+  <Bool name="ul" value="false" />
+  <Brakes>
+    <String name="date" value="1900-01-00T00:00:00Z" />
+    <FloatArray name="BrakeIndicators" >
+      <Float index="0" value="-1" />
+      <Float index="1" value="-1" />
+      <Float index="2" value="-1" />
+      <Float index="3" value="-1" />
+    </FloatArray>
+  </Brakes>
+  <Bool name="verticalCableOutlet" value="true" />
+  <Bool name="sleeve" value="false" />
+  <Bool name="userCabling" value="false" />
+  <String name="diameterAxis3" value="D25" />
+  <String name="lengthAxis3" value="L200" />
+  <String name="tool" value="flange" />
+  <Bool name="ballScrewProtection" value="false" />
+</arm>

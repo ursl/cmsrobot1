@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Data/2">
+  <Datas>
+    <Data name="bEnded" access="private" xsi:type="array" type="bool" size="1" />
+    <Data name="bFinished" access="private" xsi:type="array" type="bool" size="1" />
+    <Data name="bResult" access="private" xsi:type="array" type="bool" size="1" />
+    <Data name="dIrefWarning" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IrefWarning" />
+    </Data>
+    <Data name="dIsafePos" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IsafePos" />
+    </Data>
+    <Data name="dIsafeRec" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IsafeRec" />
+    </Data>
+    <Data name="dIsafeVel" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IsafeVel" />
+    </Data>
+    <Data name="dIwaitingRestart" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IwaitingRestart" />
+    </Data>
+    <Data name="dQrefPos1" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\QrefPos1" />
+    </Data>
+    <Data name="dQrefPos2" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\QrefPos2" />
+    </Data>
+    <Data name="dQresetRef" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\QresetRef" />
+    </Data>
+    <Data name="jInter" access="private" xsi:type="array" type="jointRx" size="2">
+      <Value key="0" j1="16.747153" j2="23.215229" j3="121.00356449" j4="36.67895" j5="59.788219" j6="-56.84014" />
+      <Value key="1" j1="15.334778" j2="29.352505" j3="112.42629" j4="211.510021" j5="-74.522323" j6="-55.937398" />
+    </Data>
+    <Data name="jSafeReference1" access="private" xsi:type="array" type="jointRx" size="1">
+      <Value key="0" j1="-15.981558" j2="6.260298" j3="120.160224" j4="31.4667" j5="66.893497" j6="-29.887624" />
+    </Data>
+    <Data name="jSafeReference2" access="private" xsi:type="array" type="jointRx" size="1">
+      <Value key="0" j1="-3.793248" j2="1.0269555" j3="124.00918551" j4="-180.851639" j5="-30.387886" j6="-41.572914" />
+    </Data>
+    <Data name="jStart" access="private" xsi:type="array" type="jointRx" size="1">
+      <Value key="0" j1="-3.793236" j2="0.748011" j3="89.934189" j4="2.918087" j5="83.292851" j6="-41.834364" />
+    </Data>
+    <Data name="jTmp" access="private" xsi:type="array" type="jointRx" size="1" />
+    <Data name="jTolerance" access="private" xsi:type="array" type="jointRx" size="1">
+      <Value key="0" j1="0.5" j2="0.5" j3="0.5" j4="0.5" j5="0.5" j6="0.5" />
+    </Data>
+    <Data name="mNomSpeed" access="private" xsi:type="array" type="mdesc" size="1" />
+    <Data name="nPrevSafeRefStatus" access="private" xsi:type="array" type="num" size="1" />
+    <Data name="nSafeRefStatus" access="private" xsi:type="array" type="num" size="1" />
+    <Data name="pTmp" access="private" xsi:type="array" type="pointRx" size="1">
+      <Value key="0" fatherId="world[0]" />
+    </Data>
+    <Data name="sBtnFinished" access="private" xsi:type="array" type="string" size="1" />
+    <Data name="sHmiBgn" access="private" xsi:type="collection" type="string">
+      <Value key="CurrentStatus" />
+      <Value key="Processing" />
+      <Value key="QrefPos1" />
+      <Value key="QrefPos2" />
+      <Value key="ReqAction" />
+      <Value key="SafePosition" />
+      <Value key="SafeRecovery" />
+      <Value key="SafeVelocity" />
+    </Data>
+    <Data name="sHmiColor" access="private" xsi:type="collection" type="string">
+      <Value key="CurrentStatus" />
+      <Value key="Processing" />
+      <Value key="QrefPos1" />
+      <Value key="QrefPos2" />
+      <Value key="ReqAction" />
+      <Value key="SafePosition" />
+      <Value key="SafeRecovery" />
+      <Value key="SafeVelocity" />
+    </Data>
+    <Data name="sHmiColorDef" access="private" xsi:type="collection" type="string">
+      <Value key="DefaultBgn" />
+      <Value key="DefaultColor" value="black" />
+      <Value key="ErrorBgn" value="red" />
+      <Value key="ErrorColor" value="white" />
+      <Value key="InProgressBgn" value="green" />
+      <Value key="InProgressColor" value="black" />
+      <Value key="OffBgn" value="grey" />
+      <Value key="OffColor" value="white" />
+      <Value key="OkBgn" value="lime" />
+      <Value key="OkColor" value="black" />
+      <Value key="OnBgn" value="lime" />
+      <Value key="OnColor" value="black" />
+      <Value key="WarningBgn" value="orange" />
+      <Value key="WarningColor" value="black" />
+    </Data>
+    <Data name="sHmiStatusBgn" access="private" xsi:type="collection" type="string">
+      <Value key="Checked" />
+      <Value key="Defined" />
+      <Value key="Invalid" />
+      <Value key="Lost" />
+      <Value key="Reset" />
+      <Value key="Warning" />
+    </Data>
+    <Data name="sHmiStatusColor" access="private" xsi:type="collection" type="string">
+      <Value key="Checked" />
+      <Value key="Defined" />
+      <Value key="Invalid" />
+      <Value key="Lost" />
+      <Value key="Reset" />
+      <Value key="Warning" />
+    </Data>
+    <Data name="sHmiTxt" access="private" xsi:type="collection" type="string">
+      <Value key="CurrentStatus" />
+      <Value key="Processing" />
+      <Value key="QrefPos1" />
+      <Value key="QrefPos2" />
+      <Value key="ReqAction" />
+      <Value key="SafePosition" />
+      <Value key="SafeRecovery" />
+      <Value key="SafeVelocity" />
+    </Data>
+    <Data name="sVersion" access="private" xsi:type="array" type="string" size="1" />
+    <Data name="trAppro" access="private" xsi:type="array" type="trsf" size="1" />
+    <Data name="dQNoSafePos" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\QnoSafePos" />
+    </Data>
+    <Data name="dUSID1" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="Rsi9IO\IusiD1" />
+    </Data>
+  </Datas>
+</Database>

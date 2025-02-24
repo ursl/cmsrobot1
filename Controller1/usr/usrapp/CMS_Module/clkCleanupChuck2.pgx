@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="clkCleanupChuck2">
+    <Locals>
+      <Local name="nIdx" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  switchMagnet=false  
+  statusCleanupChuck2 = colorRunning
+
+  call selectedCheck()
+  call print("cleanup (modules) start")
+ 
+  // -- pick vacuum chuck2's and put them back to their original place
+  for nIdx=0 to 5
+    if !bSelectItem or (bSelectedItems[nIdx]==true)
+      call print("put away chuck " + toString("1.0", nIdx))
+      // -- move over final hdi position (where the chuck is from gluing) and down
+      // -- for edge positions make a curve to avoid hitting side bar
+      if nIdx == 0 or nIdx == 3
+        movej(appro(airexInitial[1], trZsafe), tTool, mFast)
+      endIf
+
+      //call moveDown(hdiFinal[nIdx], mSlow, trPressTwo, false, trXYZero)
+      call moveDown(hdiFinal[nIdx], mSlow, trPressTwo, false, trXYCorrectionHDI)
+   
+      // -- lift chuck2
+      switchMagnet=true
+      delay(waitShort)
+      movel(appro(hdiFinal[nIdx], trZsafe), tTool, mSlow)
+      //waitEndMove()
+      
+      // -- move over/to initial chuck position
+      // -- for edge positions make a curve to avoid hitting side bar
+      if nIdx == 0 or nIdx == 3
+        movej(appro(airexInitial[1], trZsafe), tTool, mFast)
+      endIf
+      call moveDown(chuck2[nIdx], mSlow, trZero, false, trXYZero)
+
+      // -- release it
+      switchMagnet=false
+
+      // -- move up 
+      movel(appro(chuck2[nIdx], trZsafe), tTool, mSlow)
+    endIf
+  endFor
+ 
+  // -- move back somewhere
+  call print("parking robot")
+  waitEndMove()
+  movej(jInitialPosition, tTool, mFast)
+  waitEndMove()
+  call print("cleanup (modules) done")
+  statusCleanupChuck2 = colorOn
+  statusDoModules = colorGray
+  //call selectedClear()
+  
+end]]></Code>
+  </Program>
+</Programs>

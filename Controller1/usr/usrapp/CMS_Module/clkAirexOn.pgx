@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="clkAirexOn">
+    <Locals>
+      <Local name="idx" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  for idx = 0 to 5
+    if statusValves[airexValve[idx]] == 0
+      call toggleValve(airexValve[idx])
+    endIf
+  endFor
+
+end]]></Code>
+  </Program>
+</Programs>

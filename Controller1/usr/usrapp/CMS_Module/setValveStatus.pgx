@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="setValveStatus">
+    <Code><![CDATA[begin
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q0[0]==false
+    statusValves[0] = 0
+  else
+    statusValves[0] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q1[0]==false
+    statusValves[1] = 0
+  else
+    statusValves[1] = 1
+  endIf
+    
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q2[0]==false
+    statusValves[2] = 0
+  else
+    statusValves[2] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q3[0]==false
+    statusValves[3] = 0
+  else
+    statusValves[3] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q4[0]==false
+    statusValves[4] = 0
+  else
+    statusValves[4] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q5[0]==false
+    statusValves[5] = 0
+  else
+    statusValves[5] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q6[0]==false
+    statusValves[6] = 0
+  else
+    statusValves[6] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q7[0]==false
+    statusValves[7] = 0
+  else
+    statusValves[7] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q8[0]==false
+    statusValves[8] = 0
+  else
+    statusValves[8] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q9[0]==false
+    statusValves[9] = 0
+  else
+    statusValves[9] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q10[0]==false
+    statusValves[10] = 0
+  else
+    statusValves[10] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q11[0]==false
+    statusValves[11] = 0
+  else
+    statusValves[11] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q12[0]==false
+    statusValves[12] = 0
+  else
+    statusValves[12] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q13[0]==false
+    statusValves[13] = 0
+  else
+    statusValves[13] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q14[0]==false
+    statusValves[14] = 0
+  else
+    statusValves[14] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q15[0]==false
+    statusValves[15] = 0
+  else
+    statusValves[15] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q16[0]==false
+    statusValves[16] = 0
+  else
+    statusValves[16] = 1
+  endIf
+  
+  if doJ206_EtherCAT_Box_1__CPX_FB37__Q17[0]==false
+    statusValves[17] = 0
+  else
+    statusValves[17] = 1
+  endIf  
+end]]></Code>
+  </Program>
+</Programs>

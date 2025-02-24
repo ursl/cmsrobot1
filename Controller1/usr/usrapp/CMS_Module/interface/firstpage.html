@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "-//W3C//DTD VALHTML Strict//EN">
+  <html xmlns="http://www.staubli.com/robotics/2016/03/valhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"></meta>
+      <meta http-equiv="Pragma" content="no-cache"></meta>
+      <meta http-equiv="Expires" content="0"></meta>
+      <script type="text/javascript" src="/vendor/libs/stblUserPage.min.js"></script>
+      <link href="/vendor/libs/up.min.v2.css" rel="stylesheet" media="all" type="text/css"></link>
+      <meta name="src-version" content="8.10.2"></meta>
+    </head>
+    <body style="width: 480px; height: 690px; margin: 0">
+      <hr id="rec3" style="width: 209px; height: 216px; left: 57px; top: 15px; position: absolute"></hr>
+      <hr id="rec2" style="left: 57px; position: absolute; top: 243px; width: 209px; height: 354px"></hr>
+      <hr id="rec1" style="left: 307px; width: 140px; height: 219px; position: absolute; top: 12px"></hr>
+      <button style="left: 83px; width: 107px; height: 40px; position: absolute; top: 323px; color: #000000" id="btn_DoAirex">Glue airex</button>
+      <button style="width: 146px; height: 40px; left: 82px; position: absolute; top: 48px; color: #000000" id="btn_ventil1">open valve panel</button>
+      <button id="btn1" style="width: 80px; height: 40px; top: 90px; position: absolute; left: 335px; color: #000000">Park 1</button>
+      <button style="width: 80px; height: 40px; left: 335px; position: absolute; top: 135px; color: #000000" id="btnPark2">Park 2</button>
+      <button style="width: 80px; height: 40px; top: 45px; position: absolute; left: 335px; color: #000000" id="btn_doTest">glue glass</button>
+      <label id="lbl1" style="width: 123px; height: 32px; font-size: 16px; text-align: center; font-weight: bold; padding: 0px 0px 0px 0px; left: 316px; position: absolute; top: 20px">Test routines</label>
+      <button style="left: 83px; width: 107px; height: 40px; position: absolute; top: 371px; color: #000000" id="btn_CleanupChuck1">Cleanup</button>
+      <label id="lbl2" style="width: 126px; height: 40px; font-size: 16px; font-weight: bold; left: 83px; position: absolute; top: 251px">Programs</label>
+      <label id="lbl3" style="font-weight: bold; width: 178px; height: 43px; font-size: 14px; top: 20px; position: absolute; left: 72px">No arm power required</label>
+      <hr style="width: 27px; height: 28px; background-color: #AEAEAE; left: 220px; position: absolute; top: 329px" id="iconGlueAirex"></hr>
+      <hr style="width: 27px; height: 28px; background-color: #AEAEAE; left: 220px; position: absolute; top: 377px" id="iconCleanupChuck1"></hr>
+      <label id="lbl4" style="width: 113px; height: 20px; left: 83px; position: absolute; top: 289px">Vaccum status</label>
+      <hr style="width: 27px; height: 28px; background-color: #AEAEAE; left: 220px; position: absolute; top: 285px" id="iconVacuumStatus1"></hr>
+      <button style="left: 83px; width: 107px; height: 40px; position: absolute; top: 432px; color: #000000" id="btn_doModules">Glue modules</button>
+      <button style="width: 107px; height: 40px; left: 83px; position: absolute; top: 480px; color: #000000" id="btn_CleanupChuck2">Cleanup</button>
+      <hr style="width: 27px; height: 28px; background-color: #AEAEAE; left: 220px; position: absolute; top: 438px" id="iconGlueModules"></hr>
+      <hr style="width: 27px; height: 28px; background-color: #AEAEAE; left: 220px; position: absolute; top: 486px" id="iconCleanupChuck2"></hr>
+      <hr id="rec4" style="left: 307px; width: 140px; height: 195px; position: absolute; top: 243px"></hr>
+      <input type="checkbox" style="transform: scale(1.0); left: 328px; position: absolute; top: 285px" id="chk2"></input>
+      <input type="checkbox" style="transform: scale(1.0); left: 328px; position: absolute; top: 320px" id="chk5"></input>
+      <input type="checkbox" style="transform: scale(1.0); left: 368px; position: absolute; top: 285px" id="chk1"></input>
+      <input type="checkbox" style="transform: scale(1.0); left: 368px; position: absolute; top: 320px" id="chk4"></input>
+      <input type="checkbox" style="transform: scale(1.0); left: 409px; position: absolute; top: 285px" id="chk0"></input>
+      <input type="checkbox" style="transform: scale(1.0); left: 409px; position: absolute; top: 320px" id="chk3"></input>
+      <label id="lbl5" style="width: 99px; height: 20px; font-weight: bold; left: 330px; position: absolute; top: 251px">Selection</label>
+      <label style="width: 71px; height: 20px; top: 363px; position: absolute; left: 314px" id="lbl4_Copy1">Skip glue</label>
+      <input type="checkbox" style="transform: scale(1.0); left: 409px; position: absolute; top: 361px" id="chkSkipGlue"></input>
+      <hr id="hl1" style="left: 307px; width: 140px; height: 2px; position: absolute; top: 353px"></hr>
+      <input value="Text" style="font-size: 14px; left: 56px; position: absolute; top: 663px; width: 388px; height: 24px" id="txt1"></input>
+      <label id="lbl6" style="width: 147px; height: 20px; left: 201px; position: absolute; top: 638px">z-coordinate [mm]</label>
+      <input value="Text" style="top: 635px; position: absolute; left: 349px; width: 95px; height: 23px" id="txt2"></input>
+      <input type="range" style="top: 477px; width: 139px; height: 26px; position: absolute; left: 305px" min="1" step="1" value="5" id="rng1" max="5"></input>
+      <label id="lbl7" style="width: 60px; height: 20px; top: 456px; position: absolute; left: 308px">Speed</label>
+      <input type="number" style="width: 27px; height: 23px; left: 384px; position: absolute; top: 454px; text-align: center; background-color: #F3F4F4; border-style: none; color: #111111" id="nmb1" value="0"></input>
+      <label id="lbl8" style="width: 111px; height: 20px; font-size: 12px; top: 501px; position: absolute; left: 305px">(Production: 4)</label>
+      <input value="Text" style="left: 57px; border-width: 0px 0px 0px 0px; background-color: #F3F4F4; position: absolute; top: 640px; width: 120px; height: 22px" id="txt3"></input>
+      <button id="btn3" style="left: 150px; position: absolute; top: 178px; width: 109px; height: 23px; font-size: 14px; background-color: #FCFCFF">TCP/IP sockets</button>
+      <input value="Text" style="width: 197px; height: 24px; top: 203px; position: absolute; left: 62px; font-size: 12px" id="txtTCPIP"></input>
+      <label id="lbl9" style="width: 60px; height: 20px; top: 179px; position: absolute; left: 61px">TCP/IP</label>
+      <input type="checkbox" style="transform: scale(1.0); top: 179px; position: absolute; left: 125px" id="chk6"></input>
+      <button style="width: 107px; height: 40px; color: #000000; background-color: #FFBBC1; left: 324px; position: absolute; top: 556px" id="btn_EndProgram">End program</button>
+      <input value="Text" style="top: 607px; position: absolute; left: 349px; width: 95px; height: 23px" id="txtID"></input>
+      <label style="width: 147px; height: 20px; top: 610px; position: absolute; left: 201px" id="lbl6_Copy1">movement ID</label>
+      <button id="btn2" style="width: 105px; height: 27px; top: 97px; position: absolute; left: 120px; color: #000000; background-color: rgba(113,197,76,0.702)">all valves on</button>
+      <button style="width: 105px; height: 27px; top: 134px; position: absolute; left: 119px; color: #000000; background-color: rgba(226,119,132,0.702)" id="btn2_Copy1">all valves off</button>
+    </body>
+  </html>

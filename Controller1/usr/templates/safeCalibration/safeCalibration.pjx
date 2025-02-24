@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.5.3Cs9_BS1189" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="actBtnFinished.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+    <Program file="tHmi.pgx" />
+  </Programs>
+  <Database>
+    <Data file="safeCalibration.dtx" />
+  </Database>
+  <Libraries />
+</Project>
