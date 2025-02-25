@@ -6,6 +6,10 @@
   <Option Name="DataTreeView">
     <Nodes>
       <Node Path="Cell5" IsExpanded="true" />
+      <Node Path="Cell5\Controller1" IsExpanded="true" />
+      <Node Path="Cell5\Controller1\Disk:##CMS_Module#CMS_Module.pjx" IsExpanded="true" />
+      <Node Path="Cell5\Controller1\Disk:##CMS_Module#CMS_Module.pjx\pointRs" IsExpanded="true" />
+      <Node Path="Cell5\Controller1\Disk:##CMS_Module#CMS_Module.pjx\trsf" IsExpanded="true" />
     </Nodes>
   </Option>
   <Option Name="CellExplorer">
@@ -35,7 +39,7 @@
     </ExpressionWatches>
   </Option>
   <Option Name="3DView">
-    <_3DView Visible="true" />
+    <_3DView Visible="false" />
   </Option>
   <Option Name="SynchronizerMode">
     <Synchronizers>
