@@ -63,6 +63,8 @@
 
         call parkEndProgram()
         
+        // -- duplicate the double pre-dipping 
+        
         // -- (1) double-dip stamp into glue before starting the normal procedure
         call print("pre-dip glue stamp")
         call moveDown(glueFirstPoint[0], mFast, trOne, false, trXYZero)
@@ -87,6 +89,30 @@
         waitEndMove()
         delay(waitGlue)
         call moveStampUp(gluePreApplicationPoint[1], mSlow, trXYZero)
+ 
+         // -- (3) double-dip stamp into glue before starting the normal procedure
+        call moveDown(glueFirstPoint[2], mFast, trOne, false, trXYZero)
+        waitEndMove()
+        delay(waitGlue)
+        call moveStampUp(glueFirstPoint[2], mSlow, trXYZero)
+       
+        // -- (3) simulate depositing glue in uncovered foil area
+        call moveDown(gluePreApplicationPoint[2], mFast, trOne, false, trXYZero)
+        waitEndMove()
+        delay(waitGlue)
+        call moveStampUp(gluePreApplicationPoint[2], mSlow, trXYZero)
+        
+        // -- (4) double-dip stamp into glue before starting the normal procedure
+        call moveDown(glueFirstPoint[3], mSlow, trOne, false, trXYZero)
+        waitEndMove()
+        delay(waitGlue)
+        call moveStampUp(glueFirstPoint[3], mSlow, trXYZero)
+        
+        // -- (4) simulate depositing glue in uncovered foil area
+        call moveDown(gluePreApplicationPoint[3], mFast, trOne, false, trXYZero)
+        waitEndMove()
+        delay(waitGlue)
+        call moveStampUp(gluePreApplicationPoint[3], mSlow, trXYZero)
  
         call parkEndProgram()
 
