@@ -90,7 +90,7 @@
         delay(waitGlue)
         call moveStampUp(gluePreApplicationPoint[1], mSlow, trXYZero)
  
-         // -- (3) double-dip stamp into glue before starting the normal procedure
+        // -- (3) double-dip stamp into glue before starting the normal procedure
         call moveDown(glueFirstPoint[2], mFast, trOne, false, trXYZero)
         waitEndMove()
         delay(waitGlue)
@@ -213,9 +213,22 @@
       call print("parking robot")
       movej(jInitialPosition, tTool, mFast)
       waitEndMove()
-      statusDoModules = colorOn
       
-      //call selectedClear()
+      // -- turn off vacuum on selected sensor positions after 20 minutes
+      call print("keep vacuum for 20 minutes")
+      delay(20*60)
+
+      call print("turn off vacuum")
+      if bDoModules==true
+        for nIdx=0 to 5
+          if !bSelectItem or (bSelectedItems[nIdx]==true)
+            call toggleValve(sensorValve[nIdx])
+          endIf
+        endFor
+      endIf
+      
+      
+      statusDoModules = colorOn
       bDoModules = false
       call print("glue modules done")
     endIf

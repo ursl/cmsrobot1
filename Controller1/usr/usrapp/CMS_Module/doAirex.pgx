@@ -22,7 +22,7 @@
         delay(waitShort)
         for nAirexIdx = 0 to 5
           // -- check only the sensor valves, not the AIREX frame valves (don't care about those)
-          if statusValves[sensorValve[nAirexIdx]] == 0
+          if statusValves[hdiValve[nAirexIdx]] == 0
             bDoAirex = false
             statusDoAirex = colorError
             call print("Error: no vacuum at position " + toString("1.0", nAirexIdx))
@@ -33,7 +33,7 @@
         call print("check vacuum on selection")
         delay(waitShort)
         for nAirexIdx = 0 to 5
-          if statusValves[sensorValve[nAirexIdx]] == 0 and (bSelectedItems[nAirexIdx]==true)
+          if statusValves[hdiValve[nAirexIdx]] == 0 and (bSelectedItems[nAirexIdx]==true)
             bDoAirex = false
             statusDoAirex = colorError
             call print("Error: no vacuum at position " + toString("1.0", nAirexIdx))

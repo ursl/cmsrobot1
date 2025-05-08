@@ -4,9 +4,9 @@
   <Bool name="dhcpClient" value="false" />
   <Int name="dhcpClientType" value="-1" />
   <String name="dhcpClientAddress" value="" />
-  <Inet name="ipAddress" value="129.129.179.65" />
+  <Inet name="ipAddress" value="129.129.179.109" />
   <Inet name="ipMask" value="255.255.255.0" />
-  <Inet name="ipAddress2" value="129.129.179.65" />
+  <Inet name="ipAddress2" value="129.129.179.109" />
   <Inet name="ipMask2" value="255.255.255.0" />
   <Uint name="fieldbusConsolePort" value="0" />
   <soapServer>
